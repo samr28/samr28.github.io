@@ -1,1495 +1,789 @@
 <!DOCTYPE html>
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html lang="en">
-    <head>     
-  
-        <!-- TITLE OF SITE --> 
-        <title>Sam Roquitte</title>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
 
-        <!-- FAV AND TOUCH ICONS   -->
-        <link rel="icon" href="images/favicon.ico">
-        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Sam Roquitte</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-        <!-- GOOGLE FONTS -->
-        <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,700,900' rel='stylesheet' type='text/css'>
-        <!-- font-family: 'Merriweather', serif; -->
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-        <!-- font-family: 'Open Sans', sans-serif; -->
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        <!-- BOOTSTRAP CSS -->
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/media-queries.css">
+   <link rel="stylesheet" href="css/magnific-popup.css">
 
-        <!-- Image Slider -->
-        <link rel="stylesheet" href="css/plagin-css/owl.carousel.css">
+   <!-- Script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
 
-        <!-- FONT ICONS -->
-        <link rel="stylesheet" href="icons/rik-icons/styles.css">
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.png" >
 
-        <!--   COUSTOM CSS link  -->
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/responsive.css">
+	<script>
+	var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
 
-        <!--[if lt IE 9]>
-            <script src="js/plagin-js/html5shiv.js"></script>
-            <script src="js/plagin-js/respond.min.js"></script>
-        <![endif]-->
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+	</script>
+	
+	<style>
+		.aNoLink {
+			pointer-events: none;
+			cursor: default;
+		}
+	</style>
+	
+</head>
+
+<body>
+
+   <!-- Header
+   ================================================== -->
+   <header id="home">
+
+      <nav id="nav-wrap">
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav">
+            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+            <li><a class="smoothscroll" href="#about">About</a></li>
+	         <li><a class="smoothscroll" href="#resume">Resume</a></li>
+            <li><a class="smoothscroll" href="#portfolio">Portfolio</a></li>
+            <li><a class="smoothscroll" href="#contact">Contact</a></li>
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+      <div class="row banner">
+         <div class="banner-text">
+            <h1 class="responsive-headline">I'm Sam.</h1>
+			  <h2>
+				<a href="" class="typewrite aNoLink" data-period="2000" data-type='[ "I Love Creating New Things", "I am Creative.", "I Love Design.", "I Love Tinkering." ]'>
+					<span class="wrap"></span>
+				</a>
+			  </h2>
+            <hr />
+            <ul class="social">
+               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+               <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+               <li><a href="#"><i class="fa fa-skype"></i></a></li>
+            </ul>
+         </div>
+      </div>
+
+      <p class="scrolldown">
+         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+      </p>
+
+   </header> <!-- Header End -->
 
 
-    </head>
-    <body class="style-1">
-        
-        <!-- Start: Preloader Section
-        =================================== -->
-        <div id="main-preloader" class="main-preloader semi-dark-background">
-            <div class="container full-height">
-                <div class="row full-height">
-                    <div class="full-height col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+   <!-- About Section
+   ================================================== -->
+   <section id="about">
 
-                        <div class="main-preloader-inner">
+      <div class="row">
 
-                            <h1 class="preloader-percentage">
-                                <span class="preloader-percentage-text">0%</span> <!-- Show Percentage Number -->
-                                <!-- <span class="percentage">%</span> -->
-                            </h1>
-                            <div class="preloader-bar-outer">
-                                <div class="preloader-bar"></div> <!-- Percentage Precess Bar -->
-                            </div>
+         <div class="three columns">
 
+            <img class="profile-pic"  src="images/profilepic.jpg" alt="" />
+
+         </div>
+
+         <div class="nine columns main-col">
+
+            <h2>About Me</h2>
+
+            <p>I am a 16 year old computer programmer.  I have a large knowlege of web programming languages (HTML, CSS, PHP...) as well as some server side/other languages (Java, C++, Python...).
+			I have a passion for solving problems and learning ways that others have solved the same problem.  I also enjoy tinkering with electronics to see how they were designed.  In addidion, I have created some of 
+			my own electronic devices which are listed in my portfolio below.</p>
+
+            <div class="row">
+
+               <div class="columns contact-details">
+
+                  <h2>Contact Details</h2>
+                  <p class="address">
+						   <span>Sam Roquitte</span><br>
+						   <span>(608)203-5142</span><br>
+                     <span><a href="mailto:samroq@yahoo.com">samroq@yahoo.com</a></span>
+					   </p>
+
+               </div>
+
+               <div class="columns download">
+                  <p>
+                     <a href="#" class="button"><i class="fa fa-download"></i>Download Resume</a>
+                  </p>
+               </div>
+
+            </div> <!-- end row -->
+
+         </div> <!-- end .main-col -->
+
+      </div>
+
+   </section> <!-- About Section End-->
+
+
+   <!-- Resume Section
+   ================================================== -->
+   <section id="resume">
+
+      <!-- Education
+      ----------------------------------------------- -->
+      <div class="row education">
+
+         <div class="three columns header-col">
+            <h1><span>Education</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Middleton High School</h3>
+                  <p class="info">Student <span>&bull;</span> <em class="date">2014-2018</em></p>
+
+                  <p>
+                  I am currently a student at Middleton High school.  I have completed several mathematics courses including: Algebra, Geometry, Pre Calculus, AP Calculus (2017-2018).  I am also taking other classes like AP Psycology and Honors Physics.  The computer classes that I have taken are
+				  Intro to computer science, AP Computer Science, Android App Independent Study, Machine Learning Independent Study.
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>University Of Northwestern CTD</h3>
+                  <p class="info">Student <span>&bull;</span> <em class="date">Summer 2016</em></p>
+
+                  <p>
+                  This class taught me binary, hex etc. and the basics of electronics.  I created and programmed an Internet Of Things smart device and a finite state machine line following robot.  I also learned C++ and the basics of Arduinos.
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Education -->
+
+
+      <!-- Work
+      ----------------------------------------------- -->
+      <div class="row work">
+
+         <div class="three columns header-col">
+            <h1><span>Work</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Wingra Direct</h3>
+                  <p class="info">Intern <span>&bull;</span> <em class="date">Summer 2015 & 2016</em></p>
+
+                  <p>
+                  Wingra Direct is an online retailer operating four niche retail sites: The Rust Store, SharpeningSupplies.com, WisconsinGoods.com, and Socksperts.  
+				  This company was formed several years ago and has ten employees.  I was hired over the last two summers as a technology intern.  
+				  As a startup, my role included everything from web design to processing orders and packing boxes when needed.  One of my biggest accomplishments was completely redesigning their main website (<a href="http://wingradirect.com/">wingradirect.com</a>).  
+				  This involved programming in HTML5, CSS, JavaScript as well as taking and editing photos for the website.  I also worked with the founder on Search Engine Optimization and advertising.
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+			
+			<div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Skylake Properties LLC</h3>
+                  <p class="info">Web Design <span>&bull;</span> <em class="date">2014</em></p>
+
+                  <p>
+                  In 2015 I started developing websites and was hired by a local real estate managment company to build their site (<a href="http://skylakeprop.com/">skylakeprop.com</a>).  I used HTML5, CSS, JavaScript, JQuery and bootstrap to create a responsive website with interactive image galleries.
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Work -->
+	  
+	  <!-- Work
+      ----------------------------------------------- -->
+	  <div class="row work">
+
+         <div class="three columns header-col">
+            <h1><span>Extracurriculars</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>BadgerBOTS Robotics</h3>
+                  <p class="info">Head of Programming & Scouting <span>&bull;</span> <em class="date">2013-2018</em></p>
+
+                  <p>
+                  The FIRST Robotics Competition os an opportunity for students to work together to solve a common problem.  We design (CAD), build and program our robot which has advanced to the global competition the past two years.  
+				  My sophomore year, I developed a web app that allowed our team to gather competitive data with our phones instead of paper.  It used php and databases to store the data.
+				  The system also compiles and generalizes the data so that we can quickly and effectively determine team strategy.  This year, I am leading the overall programming effort (6 teammates) for the team.  Last summer, I led an effort to build a 3d printer.
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Rocket Club</h3>
+                  <p class="info">Lead Payload Monitoring System Engineer <span>&bull;</span> <em class="date">2017-Present</em></p>
+
+                  <p>
+                  The rocket club is part of the Rockets for Schools program which builds a 7-foot rocket with a payload inside.  Our team will participate in a launch with other teams and industry professionals.  My role is to lead a subgroup focused on developing a comprehensive monitoring system.  
+				  This will include sensors that collect temperature, rotation, pressure etc. and will log the data to an onboard computer.  We are using C++ to program the onboard computer.  This data will later be used to assess the effectiveness of the wind generators we have added to the rocket.
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+			
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Work -->
+
+
+      <!-- Skills
+      ----------------------------------------------- -->
+      <div class="row skill">
+
+         <div class="three columns header-col">
+            <h1><span>Skills</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <p>
+			
+            </p>
+
+				<div class="bars">
+
+				   <ul class="skills">
+					   <li><span class="bar-expand java"></span><em>Java</em></li>
+                  <li><span class="bar-expand cpp"></span><em>C++</em></li>
+						<li><span class="bar-expand python"></span><em>Python</em></li>
+						<li><span class="bar-expand php"></span><em>PHP/SQL</em></li>
+						<li><span class="bar-expand html5"></span><em>HTML5/CSS</em></li>
+                  <li><span class="bar-expand jquery"></span><em>JavaScript/jQuery</em></li>
+					</ul>
+
+				</div><!-- end skill-bars -->
+
+			</div> <!-- main-col end -->
+
+      </div> <!-- End skills -->
+
+   </section> <!-- Resume Section End-->
+
+
+   <!-- Portfolio Section
+   ================================================== -->
+   <section id="portfolio">
+
+      <div class="row">
+
+         <div class="twelve columns collapsed">
+
+            <!--<h1>Check Out Some of My Works.</h1>-->
+
+            <!-- portfolio-wrapper -->
+            <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+
+          	   <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-01" title="">
+                        <img alt="" src="images/portfolio/coffee.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Coffee</h5>
+                              <p>Illustrration</p>
+          					   </div>
                         </div>
-                        
-                    </div>
-                </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-02" title="">
+                        <img alt="" src="images/portfolio/console.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Console</h5>
+                              <p>Web Development</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-03" title="">
+                        <img alt="" src="images/portfolio/judah.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Judah</h5>
+                              <p>Webdesign</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-04" title="">
+                        <img alt="" src="images/portfolio/into-the-light.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Into The Light</h5>
+                              <p>Photography</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-05" title="">
+                        <img alt="" src="images/portfolio/farmerboy.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Farmer Boy</h5>
+                              <p>Branding</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-06" title="">
+                        <img alt="" src="images/portfolio/girl.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Girl</h5>
+                              <p>Photography</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-07" title="">
+                        <img alt="" src="images/portfolio/origami.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Origami</h5>
+                              <p>Illustrration</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-08" title="">
+                        <img alt="" src="images/portfolio/retrocam.jpg">
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Retrocam</h5>
+                              <p>Web Development</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div>  <!-- item end -->
+
+            </div> <!-- portfolio-wrapper end -->
+
+         </div> <!-- twelve columns end -->
+
+
+         <!-- Modal Popup
+	      --------------------------------------------------------------- -->
+
+         <div id="modal-01" class="popup-modal mfp-hide">
+
+		      <img class="scale-with-grid" src="images/portfolio/modals/m-coffee.jpg" alt="" />
+
+		      <div class="description-box">
+			      <h4>Coffee Cup</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Branding, Webdesign</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net" target="_blank">Details</a>
+		         <a class="popup-modal-dismiss">Close</a>
             </div>
-        </div>
-        <!-- End: Preloader Section
-        =================================== -->
 
+	      </div><!-- modal-01 End -->
 
+         <div id="modal-02" class="popup-modal mfp-hide">
 
-        <!-- Start: Navbar  Area
-        ============================= -->
-        <nav class="navbar navbar-fixed-top main-navbar-top navbar-top-js" id="main-navbar-top" >
-            <div class="container relative">
-                <div class="navbar-header">
+		      <img class="scale-with-grid" src="images/portfolio/modals/m-console.jpg" alt="" />
 
-                    <!-- Menu Button show Mobile view -->
-                    <button type="button" class="nav-trigger nav-trigger-animate"  data-target="#js-navbar-menu">
-                        <span aria-hidden="true" class="icon"></span>
-                    </button>
+		      <div class="description-box">
+			      <h4>Console</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Branding, Web Development</span>
+		      </div>
 
-                    <!-- TEMPLATE LOGO LIGHT -->
-                    <a class="navbar-brand light-logo btn-scroll" href="#home-section"><img src="images/logo.png" alt="" class="img-responsive"></a>
-
-                </div>
-                
-                <!-- Main Menu List -->
-                <div class="navbar-collapse" id="js-navbar-menu">
-                    <ul class="nav navbar-nav navbar-right" id="navbar-nav">
-                        <li><a class="btn-nav" href="#skills-section">skills</a></li>
-                        <li><a class="btn-nav" href="#portfolio-section">portfolio</a></li>
-                        <li><a class="btn-nav" href="#experience-section">experiences</a></li>
-                        <li><a class="btn-nav" href="#team-section">team</a></li>
-                        <li><a class="btn-nav" href="#contact-me-section">Contact Me</a></li>
-                    </ul>
-                </div>
-
-
-                <!-- Right Side Navigation Button -->
-                <div class="navbar-collapse-right hidden-xs " >
-                    <ul class="nav navbar-nav navbar-right btn-scroll">
-                        <li><a class="btn-nav" href="#contact-me-section">Get in Touch <i class="icon icon-arrow-right"></i></a></li>
-                    </ul>
-                </div>
-
+            <div class="link-box">
+               <a href="http://www.behance.net" target="_blank">Details</a>
+		         <a class="popup-modal-dismiss">Close</a>
             </div>
-        </nav>
-        <!-- End: Navbar Area
-        ============================= -->
 
+	      </div><!-- modal-02 End -->
 
+         <div id="modal-03" class="popup-modal mfp-hide">
 
+		      <img class="scale-with-grid" src="images/portfolio/modals/m-judah.jpg" alt="" />
 
-        <!--Start: 1st Section  
-            - HOME PAGE 
-        ====================================-->
-        <div class="section section-item home-section overflow hide-overlay overlay-color bg-image-1 wow" id="home-section">
-            <div class="inner-container ">
-                <div class="container">
-                    <div class="row">
-                        
-                        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+		      <div class="description-box">
+			      <h4>Judah</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Branding</span>
+		      </div>
 
-                            <div class="home-content-outer text-center">
-                                
-                                <div class="overflow">
-                                    <div class="heading-outer left-right relative">
-                                        <div class="heading-outer top-bottom relative">
-                                            <div class="overflow p-t-40 p-l-40 p-r-40 p-b-40">
-                                                <div class="section-heading-outer">
-                                                    <h1 class="heading">Hi. I'm <span class="color">Sam</span> and I make things</h1>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                </div>
-
-                                <!--<div class="overflow m-t-30">
-                                    <div class="list-view">
-                                        <ul class="nav">
-                                            <li><a class="btn-mask" href="#">DESIGN</a></li>
-                                            <li><a class="btn-mask" href="#">STRATEGY</a></li>
-                                            <li><a class="btn-mask" href="#">BRANDING</a></li>
-                                        </ul>
-                                    </div>
-                                </div>-->
-                            </div>
-
-                        </div>
-                        
-                        <!-- Next Section Arrow -->
-                        <div class="footer-button">
-                            <div class="overflow m-t-30">
-                                <div class="btn-form-outer btn-scroll">  <!-- Button Area -->
-                                    <a href="#skills-section" class="btn"><i class="icon icon-arrow-carrot-down"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Home Page Buttom Navigation -->
-                        <nav class="navbar navbar-fixed-top main-navbar-top home-nav overflow">
-                            <div class="container relative home-nav-inner">
-                                <div class="navbar-header">
-
-                                    <!-- TEMPLATE LOGO LIGHT -->
-                                    <a class="navbar-brand light-logo" href="#"><img src="images/logo.png" alt="" class="img-responsive"></a>
-
-                                </div>
-
-                                <div class="navbar-collapse-right" >
-                                    <ul class="nav navbar-nav navbar-right btn-scroll">
-                                        <li>
-                                            <a class="btn-nav btn-mask" href="#contact-me-section">Get in Touch <i class="icon icon-arrow-right"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </nav>
-                        <!-- End: Home Page Buttom Navigation -->
-
-                    </div>
-                </div>
+            <div class="link-box">
+               <a href="http://www.behance.net" target="_blank">Details</a>
+		         <a class="popup-modal-dismiss">Close</a>
             </div>
-        </div> 
-        <!--End: 1st Section  
-            - HOME PAGE 
-        ====================================-->
+
+	      </div><!-- modal-03 End -->
+
+         <div id="modal-04" class="popup-modal mfp-hide">
+
+		      <img class="scale-with-grid" src="images/portfolio/modals/m-intothelight.jpg" alt="" />
+
+		      <div class="description-box">
+			      <h4>Into the Light</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Photography</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net" target="_blank">Details</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-04 End -->
+
+         <div id="modal-05" class="popup-modal mfp-hide">
+
+		      <img class="scale-with-grid" src="images/portfolio/modals/m-farmerboy.jpg" alt="" />
+
+		      <div class="description-box">
+			      <h4>Farmer Boy</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Branding, Webdesign</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net" target="_blank">Details</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-05 End -->
+
+         <div id="modal-06" class="popup-modal mfp-hide">
+
+		      <img class="scale-with-grid" src="images/portfolio/modals/m-girl.jpg" alt="" />
+
+		      <div class="description-box">
+			      <h4>Girl</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Photography</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net" target="_blank">Details</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-06 End -->
+
+         <div id="modal-07" class="popup-modal mfp-hide">
+
+		      <img class="scale-with-grid" src="images/portfolio/modals/m-origami.jpg" alt="" />
+
+		      <div class="description-box">
+			      <h4>Origami</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Branding, Illustration</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net" target="_blank">Details</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-07 End -->
+
+         <div id="modal-08" class="popup-modal mfp-hide">
+
+		      <img class="scale-with-grid" src="images/portfolio/modals/m-retrocam.jpg" alt="" />
+
+		      <div class="description-box">
+			      <h4>Retrocam</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories"><i class="fa fa-tag"></i>Webdesign, Photography</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net" target="_blank">Details</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-01 End -->
 
 
-        
+      </div> <!-- row End -->
 
-        <!--Start: 2nd Section  
-            - SERVICES PAGE 
-        ====================================-->
-        <div class=" section section-item combine-section hide-overlay overflow semi-dark-background" id="skills-section">
-            
-            <div class="inner-container skills-section ">
-                 <div class="container">
-                    <div class="row">
-
-
-                        <!-- Start: Section Heading -->
-                        <div class="section-header col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-                            <div class="overflow">
-                                <div class="line-outer">
-                                    <div class="line wow"></div>
-                                </div>
-                            </div>
-                            <div class="overflow">
-                                <div class="section-heading-outer m-b-15">
-                                    <p class="sub-heading wow">MY SKILLS</p>
-                                </div> 
-                            </div>
-                            <!--<div class="overflow">
-                                <div class="section-heading-outer p-l-50 p-r-50">
-                                    <h2 class="section-heading wow">Our team will take your business presence to new level</h2>
-                                </div>
-                            </div>-->
-                        </div>
-                        <!-- End: Section Heading -->
-
-                        <div class="clearfix"></div>
-                        
-                        <!-- Start: Each Services Section -->
-                        <div class="each-services-outer overflow section-separator sp-bottom">
-
-                            <div class="each-services col-sm-4 col-xs-12">
-                                <div class="each-services-inner">
-                                    <div class="overflow">
-                                        <div class="title-outer wow">
-                                            <h4 class="title">Web Design</h4>
-                                        </div>
-                                    </div>
-                                    <div class="overflow">
-                                        <div class="pera-outer wow">
-                                            <p>Design and create HTML5 responsive websites.  Proficient in HTML, CSS, JavaScript, PHP.</p>
-                                        </div>
-                                    </div>
-                                    <div class="overflow m-t-30">
-                                        <div class="btn-form-outer wow">  <!-- Button Area -->
-                                            <a href="#skill-1" class="btn right-icon btn-services btn-mask">LEARN MORE <i class="icon icon-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div> <!-- End: .each-services -->
-
-                            <div class="each-services col-sm-4 col-xs-12">
-                                <div class="each-services-inner">
-                                    <div class="overflow">
-                                        <div class="title-outer wow">
-                                            <h4 class="title">Other Programming</h4>
-                                        </div>
-                                    </div>
-                                    <div class="overflow">
-                                        <div class="pera-outer wow">
-                                            <p>Java experience with FIRST Robotics and school programming classes.  C++ with Arduino and C# with Unity.  Some Python with machine learning and automated bots.</p>
-                                        </div>
-                                    </div>
-                                    <div class="overflow m-t-30">
-                                        <div class="btn-form-outer wow">  <!-- Button Area -->
-                                            <a href="#services-2" class="btn right-icon btn-services btn-mask">LEARN MORE <i class="icon icon-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div> <!-- End: .each-services -->
-
-                            <div class="each-services col-sm-4 col-xs-12">
-                                <div class="each-services-inner">
-                                    <div class="overflow">
-                                        <div class="title-outer wow">
-                                            <h4 class="title">Hardware</h4>
-                                        </div>
-                                    </div>
-                                    <div class="overflow">
-                                        <div class="pera-outer wow">
-                                            <p>Skilled at soldering and 3D printing.  Experience building PCs.</p>
-                                        </div>
-                                    </div>
-                                    <div class="overflow m-t-30">
-                                        <div class="btn-form-outer wow">  <!-- Button Area -->
-                                            <a href="#services-3" class="btn right-icon btn-services btn-mask">LEARN MORE <i class="icon icon-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div> <!-- End: .each-services -->
-
-                        </div> 
-                        <!-- End: Each Services Section -->
-                        
-
-                        <!-- Start: Each Services Part Full Detail -->
-                        <div class="services-full-view">
-                            
-                            <div class="services-details" id="skill-1">
-                                <div class="services-inner relative overflow">
-
-                                    <!-- Features Image -->
-                                    <div class="col-sm-6 col-xs-12">
-                                        <div class="features-image-outer">
-                                            <div class="image-outer">
-                                                <img src="images/skill-1.jpg" alt="Services Image" class="img-responsive">
-                                            </div>
-                                        </div>
-                                    </div> <!-- End: Features Image Area -->
-
-                                    <!-- Content Area -->
-                                    <div class="col-sm-6 col-xs-12">
-                                        <div class="services-content-outer">
-
-                                            <div class="line-outer">
-                                                <div class="line"></div>
-                                            </div>
-
-                                            <div class="section-title-outer overflow">
-                                                <h3 class="section-title">Strategy.</h3>
-                                            </div>
-
-                                            <div class="overflow m-b-15">
-                                                <div class="title-outer">
-                                                    <h6 class="title relative">PERFECT STARATEGY FORYOUR BRAND</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="overflow">
-                                                <div class="pera-outer">
-                                                    <p>Chances are unless you are very lucky you will go thru many different relationships before you find your special someone. Finding your sole mate is like gambling. In poker and blackjack you may have to play dozens of hands until you get a winning hand, and it is the same with relationships.</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="overflow">
-                                                <div class="pera-outer">
-
-                                                    <p>During your life you will probably meet some people who seem like they may be the one, or that they are closers, and I thought everything was great, until I started to seriously consider getting married.</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="overflow m-t-15">
-                                                <div class="list-outer">
-                                                    <div class="list col-sm-6">
-                                                        <div class="row">
-                                                            <i class="icon icon-icon-ribbon"></i> Award-winning Strategist
-                                                        </div>
-                                                    </div>
-                                                    <div class="list col-sm-6">
-                                                        <div class="row">
-                                                            <i class="icon icon-icon-search-alt"></i> Extended Research
-                                                        </div>
-                                                    </div>
-                                                    <div class="list col-sm-6">
-                                                        <div class="row">
-                                                            <i class="icon icon-icon-document"></i> Bullet-prof Planning
-                                                        </div>
-                                                    </div>
-                                                    <div class="list col-sm-6">
-                                                        <div class="row">
-                                                            <i class="icon icon-icon-like-alt"></i> Trusted by Thousands
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="overflow">
-                                                <div class="btn-outer m-t-50">
-                                                    <a href="#8" class="btn btn-fill right-icon">GET IN TOUCH <i class="icon icon-arrow-right"></i></a>
-                                                </div>
-                                            </div>
-
-                                        </div> <!-- End: .services-content-outer -->
-                                    </div> <!-- End: Content Area -->
-                                    
-                                    <!-- Button Area -->
-                                    <div class="back-button-outer overflow">  
-                                        <a href="#" class="btn btn-services-back btn-mask"><i class="icon icon-arrow-carrot-left-alt2"></i></a>
-                                    </div>
-
-                                </div> <!-- End: .services-inner -->
-                            </div> <!-- End: .services-details -->
-
-                            <div class="services-details" id="services-2">
-                                <div class="services-inner relative overflow">
-
-                                    <!-- Features Image -->
-                                    <div class="col-sm-6 col-xs-12">
-                                        <div class="features-image-outer">
-                                            <div class="image-outer">
-                                                <img src="images/skill-1.jpg" alt="Services Image" class="img-responsive">
-                                            </div>
-                                        </div>
-                                    </div> <!-- End: Features Image Area -->
-
-                                    <!-- Content Area -->
-                                    <div class="col-sm-6 col-xs-12">
-                                        <div class="services-content-outer">
-
-                                            <div class="line-outer">
-                                                <div class="line"></div>
-                                            </div>
-
-                                            <div class="section-title-outer overflow">
-                                                <h3 class="section-title">Strategy.</h3>
-                                            </div>
-
-                                            <div class="overflow m-b-15">
-                                                <div class="title-outer">
-                                                    <h6 class="title relative">PERFECT STARATEGY FORYOUR BRAND</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="overflow">
-                                                <div class="pera-outer">
-                                                    <p>Chances are unless you are very lucky you will go thru many different relationships before you find your special someone. Finding your sole mate is like gambling. In poker and blackjack you may have to play dozens of hands until you get a winning hand, and it is the same with relationships.</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="overflow">
-                                                <div class="pera-outer">
-
-                                                    <p>During your life you will probably meet some people who seem like they may be the one, or that they are closers, and I thought everything was great, until I started to seriously consider getting married.</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="overflow m-t-15">
-                                                <div class="list-outer">
-                                                    <div class="list col-sm-6">
-                                                        <div class="row">
-                                                            <i class="icon icon-icon-ribbon"></i> Award-winning Strategist
-                                                        </div>
-                                                    </div>
-                                                    <div class="list col-sm-6">
-                                                        <div class="row">
-                                                            <i class="icon icon-icon-search-alt"></i> Extended Research
-                                                        </div>
-                                                    </div>
-                                                    <div class="list col-sm-6">
-                                                        <div class="row">
-                                                            <i class="icon icon-icon-document"></i> Bullet-prof Planning
-                                                        </div>
-                                                    </div>
-                                                    <div class="list col-sm-6">
-                                                        <div class="row">
-                                                            <i class="icon icon-icon-like-alt"></i> Trusted by Thousands
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="overflow">
-                                                <div class="btn-outer m-t-50">
-                                                    <a href="#8" class="btn btn-fill right-icon">GET IN TOUCH <i class="icon icon-arrow-right"></i></a>
-                                                </div>
-                                            </div>
-
-                                        </div> <!-- End: .services-content-outer -->
-                                    </div> <!-- End: Content Area -->
-                                    
-                                    <!-- Button Area -->
-                                    <div class="back-button-outer overflow">  
-                                        <a href="#" class="btn btn-services-back btn-mask"><i class="icon icon-arrow-carrot-left-alt2"></i></a>
-                                    </div>
-
-                                </div> <!-- End: .services-inner -->
-                            </div> <!-- End: .services-details -->
-
-                            <div class="services-details" id="services-3">
-                                <div class="services-inner relative overflow">
-
-                                    <!-- Features Image -->
-                                    <div class="col-sm-6 col-xs-12">
-                                        <div class="features-image-outer">
-                                            <div class="image-outer">
-                                                <img src="images/skill-1.jpg" alt="Services Image" class="img-responsive">
-                                            </div>
-                                        </div>
-                                    </div> <!-- End: Features Image Area -->
-
-                                    <!-- Content Area -->
-                                    <div class="col-sm-6 col-xs-12">
-                                        <div class="services-content-outer">
-
-                                            <div class="line-outer">
-                                                <div class="line"></div>
-                                            </div>
-
-                                            <div class="section-title-outer overflow">
-                                                <h3 class="section-title">Strategy.</h3>
-                                            </div>
-
-                                            <div class="overflow m-b-15">
-                                                <div class="title-outer">
-                                                    <h6 class="title relative">PERFECT STARATEGY FORYOUR BRAND</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="overflow">
-                                                <div class="pera-outer">
-                                                    <p>Chances are unless you are very lucky you will go thru many different relationships before you find your special someone. Finding your sole mate is like gambling. In poker and blackjack you may have to play dozens of hands until you get a winning hand, and it is the same with relationships.</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="overflow">
-                                                <div class="pera-outer">
-
-                                                    <p>During your life you will probably meet some people who seem like they may be the one, or that they are closers, and I thought everything was great, until I started to seriously consider getting married.</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="overflow m-t-15">
-                                                <div class="list-outer">
-                                                    <div class="list col-sm-6">
-                                                        <div class="row">
-                                                            <i class="icon icon-icon-ribbon"></i> Award-winning Strategist
-                                                        </div>
-                                                    </div>
-                                                    <div class="list col-sm-6">
-                                                        <div class="row">
-                                                            <i class="icon icon-icon-search-alt"></i> Extended Research
-                                                        </div>
-                                                    </div>
-                                                    <div class="list col-sm-6">
-                                                        <div class="row">
-                                                            <i class="icon icon-icon-document"></i> Bullet-prof Planning
-                                                        </div>
-                                                    </div>
-                                                    <div class="list col-sm-6">
-                                                        <div class="row">
-                                                            <i class="icon icon-icon-like-alt"></i> Trusted by Thousands
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="overflow">
-                                                <div class="btn-outer m-t-50">
-                                                    <a href="#8" class="btn btn-fill right-icon">GET IN TOUCH <i class="icon icon-arrow-right"></i></a>
-                                                </div>
-                                            </div>
-
-                                        </div> <!-- End: .services-content-outer -->
-                                    </div> <!-- End: Content Area -->
-                                    
-                                    <!-- Button Area -->
-                                    <div class="back-button-outer overflow">  
-                                        <a href="#" class="btn btn-services-back btn-mask"><i class="icon icon-arrow-carrot-left-alt2"></i></a>
-                                    </div>
-
-                                </div> <!-- End: .services-inner -->
-                            </div> <!-- End: .services-details -->
-
-                        </div>
-                        <!-- End: Each Services Part Full Detail -->
-
-                    </div> <!-- End: .row -->
-                </div> <!-- End: .container -->
-            </div> <!-- End: . -->
-
-        </div>
-        <!--End: 2nd Section  
-            - SERVICES PAGE 
-        ====================================-->
-
+   </section> <!-- Portfolio Section End-->
    
 
+   <!-- Contact Section
+   ================================================== -->
+   <section id="contact">
 
-        <!--Start: 3rd Section  
-            - Portfolio PAGE
-        ====================================-->
-        <div class=" section section-item dark-background" id="portfolio-section">
-            <div class="inner-container ">
-                 <div class="container">
-                    <div class="row section-separator">
+         <div class="row section-head">
 
-                        <div class="col-sm-12 overflow">
-                            <div class="row portfolio-container wow">
-                                <div class="portfolio-wrapper pagination-style-1 owl-carousel">
+            <div class="two columns header-col">
 
-                                    <!-- SLIDES -->
+               <h1><span>Get In Touch.</span></h1>
 
-                                    <div class="item ">
-                                        
-                                        <div class="porifolio-section overflow">
-
-                                            <div class="col-xs-10 col-xs-offset-1">
-                                                <div class="row">
-                                                    <div class="image text-center">
-                                                        <img src="images/portfolio1.jpg" alt="Wingra Direct">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="each-portfolio-heading">
-                                                <div class="heading-text overflow wow">
-                                                    <div class="line"></div>
-                                                    <div class="overflow">
-                                                        <div class="sub-heading-outer">
-                                                            <p class="sub-heading">Web Design</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="text overflow">
-                                                        <div class="inner">
-                                                            Wingra Direct
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="link-list overflow wow">
-                                                    <div class="link one overflow">
-                                                        <div class="inner">
-                                                            <a class="btn btn-project-detail right-icon btn-mask" href="#" data-element="project-detail">PROJECT DETAILS <i class="icon icon-arrow-right"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="link two overflow">
-                                                        <div class="inner">
-                                                            <a class="btn btn-slider right-icon btn-mask"  data-element="slider">VIEW SLIDES <i class="icon icon-arrow-right"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="line hidden-xs"></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-10 col-md-offset-1 col-sm-12 slider-outer">
-                                                <div class="overflow">
-                                                    <div class="slider text-center">
-                                                        
-                                                        <div class="project-slider-outer">
-                                                            <div class="project-slider owl-carousel">
-
-                                                                <div class="item">
-                                                                    <img src="images/features-1.jpg" alt="Slider Images" class="img-responsive">
-                                                                </div>
-                                                                <div class="item">
-                                                                    <img src="images/features-4.jpg" alt="Slider Images" class="img-responsive">
-                                                                </div>
-                                                                <div class="item">
-                                                                    <img src="images/features-5.jpg" alt="Slider Images" class="img-responsive">
-                                                                </div>
-                                                                <div class="item">
-                                                                    <img src="images/features-6.jpg" alt="Slider Images" class="img-responsive">
-                                                                </div>
-                                                                <div class="item">
-                                                                    <img src="images/features-7.jpg" alt="Slider Images" class="img-responsive">
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="btn-outer text-left">
-                                                            <a href="#" class="btn left-icon btn-slider-back btn-mask"><i class="icon icon-arrow-left"></i> BACK TO PORTFOLIO</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xs-12 project-detail-outer">
-                                                    
-                                                <div class="project-detail">
-                                                    <div class="project-detail-inner relative semi-dark-background overflow">
-
-                                                        <div class="col-sm-6 col-xs-12 vertical-middle project-detail-content">
-                                                                
-                                                            <div class="overflow">
-                                                                <div class="heading-outer">
-                                                                    <h2 class="heading">Wingra Direct</h2>
-                                                                </div>
-                                                            </div> <!-- End: .overflow -->
-
-                                                            <div class="overflow">
-                                                                <ul class="nav list">
-                                                                    <li><p class="sub-heading">Web Design</p></li>
-                                                                    <li><p class="sub-heading">Summer 2016</p></li>
-                                                                </ul>
-                                                            </div> <!-- End: .overflow -->
-
-                                                            <div class="overflow">
-                                                                <div class="pera-outer m-t-30">
-                                                                    <p>During the summer of 2016, I interned at a local online retail company called Wingra Direct.  While there, I learned ASP and was given the chance to redesign their website.</p>
-																</div>
-                                                            </div> <!-- End: .overflow -->
-
-                                                            <div class="overflow">
-                                                                <div class="full-view-outer">
-                                                                    <a href="http://www.wingradirect.com" class="btn right-icon btn-mask">SEE THE PROJECT <i class="icon icon-arrow-right"></i></a>
-                                                                </div>
-                                                            </div> <!-- End: .overflow -->
-
-                                                        </div> <!-- End: END LEFT SIDE -->
-
-                                                        <!-- Right side Image -->
-                                                        <div class="col-sm-6 col-xs-12 vertical-middle overflow project-detail-image">
-                                                            <div class="row text-right display-full">
-                                                                <div class="project-detail-image-outer display-full">
-                                                                    <img src="images/portfolio1-1.jpg" alt="Portfolio Image">
-                                                                </div>
-                                                            </div>
-                                                        </div> <!-- End: RIGHT SIDE -->
-
-                                                    </div> <!-- End: .project-detail-content -->
-
-                                                    <div class="clearfix"></div>
-                                                    
-                                                    <!-- Back Button Area -->
-                                                    <div class="overflow">
-                                                        <div class="btn-outer text-center m-t-30">
-                                                            <a href="#" class="btn left-icon btn-slider-back btn-mask"><i class="icon icon-arrow-left"></i> BACK TO PORTFOLIO</a>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End: Back Button Area -->
-
-                                                </div> <!-- End: .project-detail -->
-
-                                            </div> <!-- End: .col-xs-12 -->
-
-                                        </div> 
-
-                                    </div> <!-- End: .item -->
-                                    <div class="item ">
-                                        
-                                        <div class="porifolio-section overflow">
-
-                                            <div class="col-xs-10 col-xs-offset-1">
-                                                <div class="row">
-                                                    <div class="image text-center">
-                                                        <img src="images/portfolio2.jpg" alt="Features Image">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="each-portfolio-heading">
-                                                <div class="heading-text overflow wow">
-                                                    <div class="line"></div>
-                                                    <div class="overflow">
-                                                        <div class="sub-heading-outer">
-                                                            <p class="sub-heading">Web Design</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="text overflow">
-                                                        <div class="inner">
-                                                            Skylake Properties LLC
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="link-list overflow wow">
-                                                    <div class="link one overflow">
-                                                        <div class="inner">
-                                                            <a class="btn btn-project-detail right-icon btn-mask" href="#" data-element="project-detail">PROJECT DETAILS <i class="icon icon-arrow-right"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="link two overflow">
-                                                        <div class="inner">
-                                                            <a class="btn btn-slider right-icon btn-mask"  data-element="slider">VIEW SLIDES <i class="icon icon-arrow-right"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="line hidden-xs"></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-10 col-md-offset-1 col-sm-12 slider-outer">
-                                                <div class="overflow">
-                                                    <div class="slider text-center">
-                                                        
-                                                        <div class="project-slider-outer">
-                                                            <div class="project-slider owl-carousel">
-
-                                                                <div class="item">
-                                                                    <img src="images/features-3.jpg" alt="Slider Images" class="img-responsive">
-                                                                </div>
-                                                                <div class="item">
-                                                                    <img src="images/features-4.jpg" alt="Slider Images" class="img-responsive">
-                                                                </div>
-                                                                <div class="item">
-                                                                    <img src="images/features-5.jpg" alt="Slider Images" class="img-responsive">
-                                                                </div>
-                                                                <div class="item">
-                                                                    <img src="images/features-6.jpg" alt="Slider Images" class="img-responsive">
-                                                                </div>
-                                                                <div class="item">
-                                                                    <img src="images/features-7.jpg" alt="Slider Images" class="img-responsive">
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="btn-outer text-left">
-                                                            <a href="#" class="btn left-icon btn-slider-back btn-mask"><i class="icon icon-arrow-left"></i> BACK TO PORTFOLIO</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xs-12 project-detail-outer">
-                                                    
-                                                <div class="project-detail">
-                                                    <div class="project-detail-inner relative semi-dark-background overflow">
-
-                                                        <div class="col-md-6 col-sm-12 vertical-middle project-detail-content">
-                                                                
-                                                            <div class="overflow">
-                                                                <div class="heading-outer">
-                                                                    <h2 class="heading">Skylake Properties LLC</h2>
-                                                                </div>
-                                                            </div> <!-- End: .overflow -->
-
-                                                            <div class="overflow">
-                                                                <ul class="nav list">
-                                                                    <li><p class="sub-heading">Web Design</p></li>
-                                                                    <li><p class="sub-heading">2014</p></li>
-                                                                </ul>
-                                                            </div> <!-- End: .overflow -->
-
-                                                            <div class="overflow">
-                                                                <div class="pera-outer m-t-30">
-                                                                    <p></p>
-																</div>
-                                                            </div> <!-- End: .overflow -->
-
-                                                            <div class="overflow">
-                                                                <div class="full-view-outer">
-                                                                    <a href="#" class="btn right-icon btn-mask">SEE THE PROJECT <i class="icon icon-arrow-right"></i></a>
-                                                                </div>
-                                                            </div> <!-- End: .overflow -->
-
-                                                        </div> <!-- End: END LEFT SIDE -->
-
-                                                        <!-- Right side Image -->
-                                                        <div class="col-md-6 col-sm-12 vertical-middle overflow project-detail-image">
-                                                            <div class="row text-right display-full">
-                                                                <div class="project-detail-image-outer display-full">
-                                                                    <img src="images/features-2.jpg" alt="Portfolio Image">
-                                                                </div>
-                                                            </div>
-                                                        </div> <!-- End: RIGHT SIDE -->
-
-                                                    </div> <!-- End: .project-detail-content -->
-
-                                                    <div class="clearfix"></div>
-                                                    
-                                                    <!-- Back Button Area -->
-                                                    <div class="overflow">
-                                                        <div class="btn-outer text-center m-t-30">
-                                                            <a href="#" class="btn left-icon btn-slider-back btn-mask"><i class="icon icon-arrow-left"></i> BACK TO PORTFOLIO</a>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End: Back Button Area -->
-
-                                                </div> <!-- End: .project-detail -->
-
-                                            </div> <!-- End: .col-xs-12 -->
-
-                                        </div> 
-
-                                    </div> <!-- End: .item -->
-                                    <div class="item ">
-                                        
-                                        <div class="porifolio-section overflow">
-
-                                            <div class="col-xs-10 col-xs-offset-1">
-                                                <div class="row">
-                                                    <div class="image text-center">
-                                                        <img src="images/portfolio3.jpg" alt="Features Image">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="each-portfolio-heading">
-                                                <div class="heading-text overflow wow">
-                                                    <div class="line"></div>
-                                                    <div class="overflow">
-                                                        <div class="sub-heading-outer">
-                                                            <p class="sub-heading">Hardware (Soldering &AMP; FDM 3D Printing)</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="text overflow">
-                                                        <div class="inner">
-                                                            Handheld Linux Computer
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="link-list overflow wow">
-                                                    <div class="link one overflow">
-                                                        <div class="inner">
-                                                            <a class="btn btn-project-detail right-icon btn-mask" href="#" data-element="project-detail">PROJECT DETAILS <i class="icon icon-arrow-right"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="link two overflow">
-                                                        <div class="inner">
-                                                            <a class="btn btn-slider right-icon btn-mask"  data-element="slider">VIEW SLIDES <i class="icon icon-arrow-right"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="line hidden-xs"></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-10 col-md-offset-1 col-sm-12 slider-outer">
-                                                <div class="overflow">
-                                                    <div class="slider text-center">
-                                                        
-                                                        <div class="project-slider-outer">
-                                                            <div class="project-slider owl-carousel">
-
-                                                                <div class="item">
-                                                                    <img src="images/portfolio3.jpg" alt="Slider Images" class="img-responsive">
-                                                                </div>
-                                                                <div class="item">
-                                                                    <img src="images/portfolio3-1.jpg" alt="Slider Images" class="img-responsive">
-                                                                </div>
-                                                                <div class="item">
-                                                                    <img src="images/portfolio3-2.jpg" alt="Slider Images" class="img-responsive">
-                                                                </div>
-                                                                <div class="item">
-                                                                    <img src="images/portfolio3-3.jpg" alt="Slider Images" class="img-responsive">
-                                                                </div>
-                                                                <div class="item">
-                                                                    <img src="images/portfolio3-4.jpg" alt="Slider Images" class="img-responsive">
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="btn-outer text-left">
-                                                            <a href="#" class="btn left-icon btn-slider-back btn-mask"><i class="icon icon-arrow-left"></i> BACK TO PORTFOLIO</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xs-12 project-detail-outer">
-                                                    
-                                                <div class="project-detail">
-                                                    <div class="project-detail-inner relative semi-dark-background overflow">
-
-                                                        <div class="col-md-6 col-sm-12 vertical-middle project-detail-content">
-                                                                
-                                                            <div class="overflow">
-                                                                <div class="heading-outer">
-                                                                    <h2 class="heading">Handheld Linux Computer</h2>
-                                                                </div>
-                                                            </div> <!-- End: .overflow -->
-
-                                                            <div class="overflow">
-                                                                <ul class="nav list">
-                                                                    <li><p class="sub-heading">Hardware (Soldering &AMP; FDM 3D Printing)</p></li>
-                                                                    <li><p class="sub-heading">2015-2016</p></li>
-                                                                </ul>
-                                                            </div> <!-- End: .overflow -->
-
-                                                            <div class="overflow">
-                                                                <div class="pera-outer m-t-30">
-                                                                    <p>Having a baby can be a nerve wracking experience for new parents – not the nine months of pregnancy, I’m talking about after the infant is brought home from the hospital. It’s always the same thing, by the time they have their third child they have it all figured out, but with number one it’s a learning thing.</p>
-                                                                    <p>Baby monitors help you hear your baby’s needs without you having to be in the room with the baby. Some baby monitors are portable, or “mobile” and are small enough that you can carry it in your pocket as you do your daily chores around the house. Depending on your price range it’s best to have a base unit that plugs into the wall. The receiving unit can be like your portable phone, you can carry it around with you, and plug it back into the base unit to be recharged.</p>
-                                                                </div>
-                                                            </div> <!-- End: .overflow -->
-
-                                                        </div> <!-- End: END LEFT SIDE -->
-
-                                                        <!-- Right side Image -->
-                                                        <div class="col-md-6 col-sm-12 vertical-middle overflow project-detail-image">
-                                                            <div class="row text-right display-full">
-                                                                <div class="project-detail-image-outer display-full">
-                                                                    <img src="images/portfolio3.jpg" alt="Portfolio Image">
-                                                                </div>
-                                                            </div>
-                                                        </div> <!-- End: RIGHT SIDE -->
-
-                                                    </div> <!-- End: .project-detail-content -->
-
-                                                    <div class="clearfix"></div>
-                                                    
-                                                    <!-- Back Button Area -->
-                                                    <div class="overflow">
-                                                        <div class="btn-outer text-center m-t-30">
-                                                            <a href="#" class="btn left-icon btn-slider-back btn-mask"><i class="icon icon-arrow-left"></i> BACK TO PORTFOLIO</a>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End: Back Button Area -->
-
-                                                </div> <!-- End: .project-detail -->
-
-                                            </div> <!-- End: .col-xs-12 -->
-
-                                        </div> 
-
-                                    </div> <!-- End: .item -->
-
-                                </div> <!-- End: .swiper-wrapper -->
-                            </div> <!-- End: .experiences-container -->
-                        </div> <!-- End: .col-xs-12 -->
-
-                    </div> <!-- End: .row -->
-                </div> <!-- End: .container -->
-            </div> <!-- End: .inner-container -->
-
-        </div>
-        <!--End: 3rd Section  
-            - Portfolio PAGE
-        ====================================-->
-        
-
-
-        <!--Start: 4th Section  
-            - experience PAGE
-        ====================================-->
-        <div class=" section section-item combine-section hide-overlay semi-dark-background" id="experience-section">
-            <div class="inner-container experience-section semi-dark-background" id="experience">
-                 <div class="container">
-                    <div class="row section-separator sp-bottom">
-                        
-                        <!-- Start: Section Heading -->
-                        <div class="section-header col-sm-10 col-sm-offset-1">
-                            <div class="overflow">
-                                <div class="line-outer">
-                                    <div class="line wow"></div>
-                                </div>
-                            </div>
-                            <div class="overflow">
-                                <div class="section-heading-outer m-b-15">
-                                    <p class="sub-heading wow">experience</p>
-                                </div> 
-                            </div>
-                            <div class="overflow">
-                                <div class="section-heading-outer p-l-50 p-r-50">
-                                    <h2 class="section-heading wow">We have worked with some amazing companies around the world</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End: Section Heading -->
-
-                        <div class="clearfix"></div>
-
-                        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 overflow">
-                            <div class="experience-container wow">
-                                <div class="experience-wrapper pagination-style-1 owl-carousel">
-
-                                    <!-- SLIDES -->
-                                    <div class="item">
-
-                                        <div class="overflow">
-                                            <div class="image-outer">
-                                                <img src="images/experience/2.jpg">
-                                            </div>
-                                        </div>
-                                        <div class="overflow m-t-40">
-                                            <div class="text-outer">
-                                                <blockquote>“These cartridges can be replaced by the printer ink of similar brand. Compatible Inkjet Cartridge will help you to make extra-ordinary savings with money back guarantee. As soon as the cartridge gets empty the ink that it contains begins to dry”</blockquote>
-                                            </div>
-                                        </div>
-                                        <div class="overflow m-t-40 m-b-30">
-                                            <div class="profile-outer">
-                                                <span class="name">ANTHONY WATKINS</span>
-                                                <span class="position">VP of Product, VISA</span>
-                                            </div>
-                                        </div>
-
-                                    </div> <!-- End: .swiper-slider -->
-                                    <div class="item">
-
-                                        <div class="overflow">
-                                            <div class="image-outer">
-                                                <img src="images/experience/2.jpg">
-                                            </div>
-                                        </div>
-                                        <div class="overflow m-t-40">
-                                            <div class="text-outer">
-                                                <blockquote>“These cartridges can be replaced by the printer ink of similar brand. Compatible Inkjet Cartridge will help you to make extra-ordinary savings with money back guarantee. As soon as the cartridge gets empty the ink that it contains begins to dry”</blockquote>
-                                            </div>
-                                        </div>
-                                        <div class="overflow m-t-40 m-b-30">
-                                            <div class="profile-outer">
-                                                <span class="name">ANTHONY WATKINS</span>
-                                                <span class="position">VP of Product, VISA</span>
-                                            </div>
-                                        </div>
-
-                                    </div> <!-- End: .swiper-slider -->
-                                    <div class="item">
-
-                                        <div class="overflow">
-                                            <div class="image-outer">
-                                                <img src="images/experience/2.jpg">
-                                            </div>
-                                        </div>
-                                        <div class="overflow m-t-40">
-                                            <div class="text-outer">
-                                                <blockquote>“These cartridges can be replaced by the printer ink of similar brand. Compatible Inkjet Cartridge will help you to make extra-ordinary savings with money back guarantee. As soon as the cartridge gets empty the ink that it contains begins to dry”</blockquote>
-                                            </div>
-                                        </div>
-                                        <div class="overflow m-t-40 m-b-30">
-                                            <div class="profile-outer">
-                                                <span class="name">ANTHONY WATKINS</span>
-                                                <span class="position">VP of Product, VISA</span>
-                                            </div>
-                                        </div>
-
-                                    </div> <!-- End: .swiper-slider -->
-
-                                </div> <!-- End: .swiper-wrapper -->
-                            </div> <!-- End: .experiences-container -->
-                        </div> <!-- End: .col-xs-12 -->
-
-                    </div> <!-- End: .row -->
-                </div> <!-- End: .container -->
-            </div> <!-- End: .inner-container -->
-
-        </div>
-        <!--End: 4th Section  
-            - experience PAGE
-        ====================================-->
-
-
-
-        <!--Start: 5th Section  
-            - OUR TEAM PAGE
-        ====================================-->
-        <div class=" section section-item combine-section hide-overlay overflow dark-background" id="team-section">
-            <div class="inner-container team-member dark-background">
-                <div class="container">
-                    <div class="row section-separator sp-bottom">
-                        
-                        <!-- Start: Section Heading -->
-                        <div class="section-header col-sm-10 col-sm-offset-1">
-                            <div class="overflow">
-                                <div class="line-outer">
-                                    <div class="line wow"></div>
-                                </div>
-                            </div>
-                            <div class="overflow">
-                                <div class="section-heading-outer m-b-15">
-                                    <p class="sub-heading wow">OUR TEAM</p>
-                                </div> 
-                            </div>
-                            <div class="overflow">
-                                <div class="section-heading-outer p-l-50 p-r-50">
-                                    <h2 class="section-heading wow">Our Amazing Team</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End: Section Heading -->
-
-                        <div class="clearfix"></div>
-
-                        <div class="col-sm-12 grid-item m-t-30">
-                            <div class="row">
-
-                                <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
-                                    <div class="item-inner overflow absolute">
-
-                                        <div class="profile-outer center">
-                                            <div class="profile-image">
-                                                <img src="images/experience/2.jpg" alt="Team Member" class="">
-                                            </div>
-                                            <div class="profile-content">
-                                                <span class="name">ANTHONY WATKINS</span>
-                                                <span class="position">VP of Product, VISA</span>
-                                            </div>
-                                        </div>
-                                        <div class="content-detail">
-                                            <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
-                                        </div>
-
-                                    </div>
-                                </div> <!-- End: .each-item -->
-                                <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
-                                    <div class="item-inner overflow absolute">
-
-                                        <div class="profile-outer center">
-                                            <div class="profile-image">
-                                                <img src="images/experience/3.jpg" alt="Team Member" class="">
-                                            </div>
-                                            <div class="profile-content">
-                                                <span class="name">ANTHONY WATKINS</span>
-                                                <span class="position">VP of Product, VISA</span>
-                                            </div>
-                                        </div>
-                                        <div class="content-detail">
-                                            <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
-                                        </div>
-
-                                    </div>
-                                </div> <!-- End: .each-item -->
-                                <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
-                                    <div class="item-inner overflow absolute">
-
-                                        <div class="profile-outer center">
-                                            <div class="profile-image">
-                                                <img src="images/experience/1.jpg" alt="Team Member" class="">
-                                            </div>
-                                            <div class="profile-content">
-                                                <span class="name">ANTHONY WATKINS</span>
-                                                <span class="position">VP of Product, VISA</span>
-                                            </div>
-                                        </div>
-                                        <div class="content-detail">
-                                            <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
-                                        </div>
-
-                                    </div>
-                                </div> <!-- End: .each-item -->
-                                <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
-                                    <div class="item-inner overflow absolute">
-
-                                        <div class="profile-outer center">
-                                            <div class="profile-image">
-                                                <img src="images/experience/4.jpg" alt="Team Member" class="">
-                                            </div>
-                                            <div class="profile-content">
-                                                <span class="name">ANTHONY WATKINS</span>
-                                                <span class="position">VP of Product, VISA</span>
-                                            </div>
-                                        </div>
-                                        <div class="content-detail">
-                                            <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
-                                        </div>
-
-                                    </div>
-                                </div> <!-- End: .each-item -->
-                                <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
-                                    <div class="item-inner overflow absolute">
-
-                                        <div class="profile-outer center">
-                                            <div class="profile-image">
-                                                <img src="images/experience/5.jpg" alt="Team Member" class="">
-                                            </div>
-                                            <div class="profile-content">
-                                                <span class="name">ANTHONY WATKINS</span>
-                                                <span class="position">VP of Product, VISA</span>
-                                            </div>
-                                        </div>
-                                        <div class="content-detail">
-                                            <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
-                                        </div>
-
-                                    </div>
-                                </div> <!-- End: .each-item -->
-                                <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
-                                    <div class="item-inner overflow absolute">
-
-                                        <div class="profile-outer center">
-                                            <div class="profile-image">
-                                                <img src="images/experience/6.jpg" alt="Team Member" class="">
-                                            </div>
-                                            <div class="profile-content">
-                                                <span class="name">ANTHONY WATKINS</span>
-                                                <span class="position">VP of Product, VISA</span>
-                                            </div>
-                                        </div>
-                                        <div class="content-detail">
-                                            <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
-                                        </div>
-
-                                    </div>
-                                </div> <!-- End: .each-item -->
-                                <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
-                                    <div class="item-inner overflow absolute">
-
-                                        <div class="profile-outer center">
-                                            <div class="profile-image">
-                                                <img src="images/experience/7.jpg" alt="Team Member" class="">
-                                            </div>
-                                            <div class="profile-content">
-                                                <span class="name">ANTHONY WATKINS</span>
-                                                <span class="position">VP of Product, VISA</span>
-                                            </div>
-                                        </div>
-                                        <div class="content-detail">
-                                            <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
-                                        </div>
-
-                                    </div>
-                                </div> <!-- End: .each-item -->
-                                <div class="col-md-3 col-sm-6 col-xs-12 each-item overflow text-center relative wow">
-                                    <div class="item-inner overflow absolute">
-
-                                        <div class="profile-outer center">
-                                            <div class="profile-image">
-                                                <img src="images/experience/8.jpg" alt="Team Member" class="">
-                                            </div>
-                                            <div class="profile-content">
-                                                <span class="name">ANTHONY WATKINS</span>
-                                                <span class="position">VP of Product, VISA</span>
-                                            </div>
-                                        </div>
-                                        <div class="content-detail">
-                                            <p>Vincent is the Founder &amp; CEO of Fusion. He is leading  the company to success with his experience &amp; skill. Leader piverate paradigm cortado ship it integrate Space Team parallax persons grok. Parallax food truck fund 360 campaign venture capital pitch deck actionable insight innovate.</p>
-                                        </div>
-
-                                    </div>
-                                </div> <!-- End: .each-item -->
-
-
-                            </div>
-                        </div> <!-- End: .col-xs-12 -->
-
-                    </div> <!-- End: .row -->
-                </div> <!-- End: .container -->
-            </div> <!-- End: .inner-container -->
-
-        </div>
-        <!--End: 5th Section  
-            - OUR TEAM PAGE
-        ====================================-->
-
-
-
-        <!--Start: 6th Section  
-            - CONTACT US PAGE
-        ====================================-->
-        <div class=" section section-item combine-section hide-overlay overflow wow" id="contact-me-section">
-            <div class="overlay-color relative bg-image-2">
-
-                <div class="inner-container contact-us" id="contact">
-                    <div class="container">
-                        <div class="row">
-                            
-                            <!-- Start: Section Heading -->
-                            <div class="section-header col-sm-10 col-sm-offset-1">
-                                <div class="overflow">
-                                    <div class="line-outer">
-                                        <div class="line wow"></div>
-                                    </div>
-                                </div>
-                                <div class="overflow">
-                                    <div class="section-heading-outer m-b-15">
-                                        <p class="sub-heading wow">CONTACT ME</p>
-                                    </div> 
-                                </div>
-                            </div>
-                            <!-- End: Section Heading -->
-
-                            <div class="clearfix"></div>
-
-                            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 overflow">
-                                <div class="row single-form-outer wow">
-                                    
-                                    <form id="contact-form" method="post" class="dark-background single-form" action="php/sendmail.php">
-
-                                        <div class="message col-xs-12">
-                                            <p class="email-loading"><img src="images/loading.gif" alt="">&nbsp;&nbsp;&nbsp;Sending...</p>
-                                            <p class="email-success"><i class="icon icon-icon-check-alt2"></i> Your quote has successfully been sent.</p>
-                                            <p class="email-failed"><i class="icon icon-icon-close-alt2"></i> Something went wrong!</p>
-                                        </div>
-
-                                        
-                                        <div class="col-sm-6 col-xs-12">
-                                            <div class="input-outer">
-                                                <div class="group relative">
-                                                    <input name="name" class="contact-name form-control" id="contact-name" type="text"  required="">
-                                                    <label class="input-label" for="contact-name">
-                                                        <span class="label-text">YOUR NAME</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-6 col-xs-12">
-                                            <div class="input-outer ">
-                                                <div class="group relative">
-                                                    <input name="name" class="contact-email form-control" id="contact-email" type="email"  required="">
-                                                    <label class="input-label" for="contact-email">
-                                                        <span class="label-text">YOUR EMAIL</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-6 col-xs-12">
-                                            <div class="input-outer ">
-                                                <div class="group relative">
-                                                    <input name="name" class="contact-company form-control" id="contact-company" type="text"  required="">
-                                                    <label class="input-label" for="contact-company">
-                                                        <span class="label-text">COMPANY</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-6 col-xs-12">
-                                            <div class="input-outer ">
-                                                <div class="group relative">
-                                                    <input name="name" class="contact-subject form-control" id="contact-subject" type="text"  required="">
-                                                    <label class="input-label" for="contact-subject">
-                                                        <span class="label-text">SUBJECT</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xs-12">
-                                            <div class="input-outer ">
-                                                <div class="group relative">
-                                                    <textarea class="contact-message form-control" id="contact-message" rows="3" required=""></textarea>
-                                                    <label class="input-label" for="contact-message">
-                                                        <span class="label-text">YOUR MESSAGE</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- Subject Button -->
-                                        <div class="btn-form text-center col-xs-12">
-                                            <div class="button-outer relative">
-                                                <button class="btn btn-fill right-icon">GET IN TOUCH <i class="icon icon-arrow-right"></i></button>
-                                            </div>
-                                        </div>
-                                    </form>
-
-                                </div> <!-- /#experiences-1 -->
-                            </div> <!-- End: .col-xs-12 -->
-
-                            <div class="clearfix"></div>
-
-                            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 contact-footer">
-                                <div class="row">
-                                    
-                                    <div class="about col-sm-1 m-t-15">
-
-                                        <div class="overflow">
-                                            <div class="logo-outer wow">
-                                                <a href="index.html" class="logo-link">
-                                                    <img src="images/logo.png" alt="" class="img-responsive logo">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                    </div> <!-- End: .about -->
-                                    <div class="other-link col-sm-11">
-                                        <div class="row">
-
-                                            <div class="each-section col-sm-4 col-xs-12">
-                                                <div class="each-section-inner">
-                                                    
-                                                    <div class="overflow">
-                                                        <p class="title wow">Contact</p>
-                                                    </div>
-                                                    <ul class="nav">
-                                                        <li class="overflow">
-                                                            <div class="li-inner wow">
-                                                                <a href="mailto:samroq@yahoo.com" class="btn-mask">samroq@yahoo.com</a>
-                                                            </div>
-                                                        </li>
-                                                        <li class="overflow">
-                                                            <div class="li-inner wow">
-                                                                <ul class="nav social-icon">
-                                                                    <li><a href="https://www.linkedin.com/in/sam-r-122628133"><i class="icon icon-social-linkedin-circle"></i></a></li>
-                                                                    <li><a href="https://plus.google.com/116592746472102313790"><i class="icon icon-social-googleplus-circle"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                
-                                                </div>
-                                            </div> <!-- End: .each-section -->
-
-                                        </div>
-                                    </div> <!-- End: .other-link -->
-
-                                </div> <!-- End: .row -->
-                            </div> <!-- End: .contact-footer -->
-
-                        </div> <!-- End: .row -->
-                    </div> <!-- End: .container -->
-                </div> <!-- End: .inner-container -->
-                
             </div>
 
-        </div>
-        <!--End: 6th Section  
-            - CONTACT US PAGE
-        ====================================-->
+            <div class="ten columns">
+
+                  <h2 style="color:#fff; text-align:center;">Contact Me</h2>
+
+            </div>
+
+         </div>
+
+         <div class="row">
 
 
+               <!-- form -->
+               <form action="" method="post" id="contactForm" name="contactForm">
+					<fieldset>
+
+                  <div>
+						   <label for="contactName">Name <span class="required">*</span></label>
+						   <input type="text" value="" size="35" id="contactName" name="contactName">
+                  </div>
+
+                  <div>
+						   <label for="contactEmail">Email <span class="required">*</span></label>
+						   <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
+                  </div>
+
+                  <div>
+						   <label for="contactSubject">Subject</label>
+						   <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
+                  </div>
+
+                  <div>
+                     <label for="contactMessage">Message <span class="required">*</span></label>
+                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                  </div>
+
+                  <div>
+                     <button class="submit">Submit</button>
+                     <span id="image-loader">
+                        <img alt="" src="images/loader.gif">
+                     </span>
+                  </div>
+
+					</fieldset>
+				   </form> <!-- Form End -->
+
+               <!-- contact-warning -->
+               <div id="message-warning"> Error</div>
+               <!-- contact-success -->
+				   <div id="message-success">
+                  <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+				   </div>
+		</div>
+
+   </section> <!-- Contact Section End-->
 
 
-        
-        <!-- SCRIPTS 
-        ========================================-->
-        <script src="js/plagin-js/jquery-1.11.3.js"></script>
-        <script src="js/plagin-js/preloader.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
-        <script src="js/plagin-js/plagin.js"></script>
+   <!-- footer
+   ================================================== -->
+   <footer>
 
-        <!-- Custom Script 
-        ==========================================-->
-        <script src="js/custom-scripts.js"></script>
+      <div class="row">
 
+         <div class="twelve columns">
 
+            <ul class="social-links">
+               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+               <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+               <li><a href="#"><i class="fa fa-skype"></i></a></li>
+            </ul>
 
-    </body>
+            <ul class="copyright">
+               <li>&copy; Copyright 2017 Sam Roquitte</li>
+               <li>Design by Styleshout & Sam Roquitte</li>   
+            </ul>
+
+         </div>
+
+         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+
+      </div>
+
+   </footer> <!-- Footer End-->
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="js/jquery.flexslider.js"></script>
+   <script src="js/waypoints.js"></script>
+   <script src="js/jquery.fittext.js"></script>
+   <script src="js/magnific-popup.js"></script>
+   <script src="js/init.js"></script>
+
+</body>
 
 </html>
