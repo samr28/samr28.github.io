@@ -26,7 +26,7 @@ ol.type li a {
 ol.type li a.active {
 	background: #222;
 	border: 1px solid #222;
-	//color: #fff;
+	color: #fff;
 }
 ol.type li a:hover {
 	//background: #222;
