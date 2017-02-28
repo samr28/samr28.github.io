@@ -20,7 +20,7 @@ ol.type li {
 }
 ol.type li a {
 	/*border: 1px solid #777;*/
-	color: #555;
+	color: #fff;
 	padding: 8px 20px;
 }
 ol.type li a.active {
