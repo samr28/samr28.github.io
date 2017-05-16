@@ -436,6 +436,38 @@ var TxtType = function(el, toRotate, period) {
 					  </div>
 					</div>
 				</div>
+				<div class="col-sm-6 col-md-3 col-lg-3 programming hardware">
+				   <div class="columns portfolio-item">
+					  <div class="item-wrap">
+						 <a href="#modal-ruby" title="">
+							<img alt="" src="images/portfolio/ruby.png">
+							<div class="overlay">
+							   <div class="portfolio-item-meta">
+									  <h5>BadgerBOTS Rube Goldberg Machine</h5>
+								  <p>Programming, Hardware</p>
+								   </div>
+							</div>
+							<div class="link-icon"><i class="icon-plus"></i></div>
+						 </a>
+					  </div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3 col-lg-3 web">
+				   <div class="columns portfolio-item">
+					  <div class="item-wrap">
+						 <a href="#modal-tba" title="">
+							<img alt="" src="images/portfolio/tbaToSlack.png">
+							<div class="overlay">
+							   <div class="portfolio-item-meta">
+									  <h5>The Blue Alliance Slack Hook</h5>
+								  <p>Web Development</p>
+								   </div>
+							</div>
+							<div class="link-icon"><i class="icon-plus"></i></div>
+						 </a>
+					  </div>
+					</div>
+				</div>
 			  </div>
 			</div>
 		  </div>
@@ -526,21 +558,32 @@ var TxtType = function(el, toRotate, period) {
 			 <a class="popup-modal-dismiss">Close</a>
 		</div>
 	  </div>
-	 <div id="modal-08" class="popup-modal mfp-hide">
-
-		  <img class="scale-with-grid" src="images/portfolio/modals/m-retrocam.jpg" alt="" />
-
+	 <div id="modal-ruby" class="popup-modal mfp-hide">
 		  <div class="description-box">
-			  <h4>Retrocam</h4>
-			  <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-		   <span class="categories"><i class="fa fa-tag"></i>Webdesign, Photography</span>
+			<video width="100%" controls>
+			  <source src="images/portfolio/ruby1.mp4" type="video/mp4">
+			  Your browser does not support HTML5 video.
+			</video>
+			  <h4>BadgerBOTS Rube Goldberg Machine</h4>
+			  <p>I did all of the electronics (servos & lights controlled by an Arduino) for a rube goldberg machine that was built for the BadgerBOTS Chairman's team to use as a speaking aid.  We later won the Chairman's award at the LaCrosse regional.</p>
+		   <span class="categories"><i class="fa fa-tag"></i>Programming, Hardware</span>
 		  </div>
-
 		<div class="link-box">
-		   <a href="http://www.behance.net" target="_blank">Details</a>
-			 <a class="popup-modal-dismiss">Close</a>
+		   <a href="https://github.com/team1306/rube" target="_blank">View Code</a>
+			<a class="popup-modal-dismiss">Close</a>
 		</div>
-
+	  </div>
+	 <div id="modal-tba" class="popup-modal mfp-hide">
+		  <img class="scale-with-grid" src="images/portfolio/tbaToSlack1.png" alt="" />
+		  <div class="description-box">
+			  <h4>The Blue Alliance Slack Hook</h4>
+			  <p>I wrote a PHP file that will post on Slack (our team's communication service) when our robot is going to play a match.  This involved using webhooks from The Blue Alliance and the code is avaliable on the Github repository linked below.</p>
+		   <span class="categories"><i class="fa fa-tag"></i>Web Development</span>
+		  </div>
+		<div class="link-box">
+		   <a href="https://github.com/samr28/tba-to-slack-php" target="_blank">View Code</a>
+			<a class="popup-modal-dismiss">Close</a>
+		</div>
 	  </div>
   </div> <!-- row End -->
 	</section>
