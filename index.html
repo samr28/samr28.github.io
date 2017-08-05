@@ -4,733 +4,803 @@
 <!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 
-   <!--- Basic Page Needs
-   ================================================== -->
-   <meta charset="utf-8">
-	<title>Sam Roquitte</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-   <!-- Mobile Specific Metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS
+    <!--- Basic Page Needs
     ================================================== -->
-	<link rel="stylesheet" href="css/default.css">
-	<link rel="stylesheet" href="css/layout.css">
-	<link rel="stylesheet" href="css/media-queries.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
+    <meta charset="utf-8">
+    <title>Sam Roquitte</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-   <!-- Script
-   ================================================== -->
-	<script src="js/modernizr.js"></script>
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-   <!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="favicon.png" >
-	
-	<!-- Bootstrap -->
-	<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/media-queries.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
 
-	<!-- Stylesheet
-	================================================== -->
-	<link rel="stylesheet" type="text/css"  href="css/portfolio.css">
+    <!-- Script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
 
-	<script>
-var TxtType = function(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-    };
+    <!-- Favicons
+     ================================================== -->
+    <link rel="shortcut icon" href="favicon.png" >
 
-    TxtType.prototype.tick = function() {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
+    <!-- Bootstrap
+    ================================================== -->
+    <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
 
-        if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
+    <!-- Stylesheet
+    ================================================== -->
+    <link rel="stylesheet" type="text/css"  href="css/portfolio.css">
 
-        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+    <script>
+        var TxtType = function(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
 
-        var that = this;
-        var delta = 200 - Math.random() * 100;
+        TxtType.prototype.tick = function() {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
 
-        if (this.isDeleting) { delta /= 2; }
-
-        if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-        }
-
-        setTimeout(function() {
-        that.tick();
-        }, delta);
-    };
-
-    window.onload = function() {
-        var elements = document.getElementsByClassName('typewrite');
-        for (var i=0; i<elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-type');
-            var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-              new TxtType(elements[i], JSON.parse(toRotate), period);
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
             }
-        }
-        // INJECT CSS
-        var css = document.createElement("style");
-        css.type = "text/css";
-        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-        document.body.appendChild(css);
-    };
-	</script>
-	
-	<style>
-		.aNoLink {
-			pointer-events: none;
-			cursor: default;
-		}
-	</style>
-	
-	<!-- Bootstrap -->
-	<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
 
-	<!-- Stylesheet
-		================================================== -->
-	<link rel="stylesheet" type="text/css"  href="css/portfolio.css">
-	
+            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function() {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function() {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i=0; i<elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            document.body.appendChild(css);
+        };
+    </script>
+
+    <style>
+        .aNoLink {
+            pointer-events: none;
+            cursor: default;
+        }
+    </style>
+
 </head>
 
 <body>
 
-   <!-- Header
-   ================================================== -->
-   <header id="home">
+<!-- Header
+================================================== -->
+<header id="home">
 
-      <nav id="nav-wrap">
+    <nav id="nav-wrap">
 
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+        <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+        <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
 
-         <ul id="nav" class="nav">
+        <ul id="nav" class="nav">
             <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
             <li><a class="smoothscroll" href="#about">About</a></li>
-	         <li><a class="smoothscroll" href="#resume">Resume</a></li>
+            <li><a class="smoothscroll" href="#resume">Resume</a></li>
             <li><a class="smoothscroll" href="#portfolio">Portfolio</a></li>
             <li><a class="smoothscroll" href="#contact">Contact</a></li>
-         </ul> <!-- end #nav -->
+        </ul> <!-- end #nav -->
 
-      </nav> <!-- end #nav-wrap -->
+    </nav> <!-- end #nav-wrap -->
 
-      <div class="row banner">
-         <div class="banner-text">
+    <div class="row banner">
+        <div class="banner-text">
             <h1 class="responsive-headline">I'm Sam.</h1>
-			  <h2>
-				<a style="cursor: default;" href="" class="typewrite aNoLink" data-period="2000" data-type='[ "I Love Creating New Things.", "I Love Problem Solving.", "I Love Designing Things.", "I Love Tinkering.", "I Love Fixing Things.", "I Love Programming." ]'>
-					<span class="wrap"></span>
-				</a>
-			  </h2>
+            <h2>
+                <a style="cursor: default;" href="" class="typewrite aNoLink" data-period="2000" data-type='[ "I Love Creating New Things.", "I Love Problem Solving.", "I Love Designing Things.", "I Love Tinkering.", "I Love Fixing Things.", "I Love Programming." ]'>
+                    <span class="wrap"></span>
+                </a>
+            </h2>
             <hr />
             <ul class="social">
-               <li><a href="mailto:samroq@yahoo.com"><i class="fa fa-envelope-o"></i></a></li>
-               <li><a href="https://plus.google.com/116592746472102313790"><i class="fa fa-google-plus"></i></a></li>
-               <li><a href="https://www.linkedin.com/in/samroquitte/"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="https://github.com/samr28"><i class="fa fa-github"></i></a></li>
+                <li><a href="mailto:samroq@yahoo.com"><i class="fa fa-envelope-o"></i></a></li>
+                <li><a href="https://plus.google.com/116592746472102313790"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/samroquitte/"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/samr28"><i class="fa fa-github"></i></a></li>
             </ul>
-         </div>
-      </div>
+        </div>
+    </div>
 
-      <p class="scrolldown">
-         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
-      </p>
+    <p class="scrolldown">
+        <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+    </p>
 
-   </header> <!-- Header End -->
+</header> <!-- Header End -->
 
 
-   <!-- About Section -->
-   <section id="about">
-      <div class="row">
-         <div class="three columns">
-            <img class="profile-pic"  src="images/profilepic.jpg" alt="" />
-         </div>
-         <div class="nine columns main-col">
+<!-- About Section -->
+<section id="about">
+    <div class="row">
+        <div class="three columns">
+            <img class="profile-pic" src="images/profilepic.jpg" alt="" />
+        </div>
+        <div class="nine columns main-col">
             <h2>About Me</h2>
-            <p>I am a 17 year old computer programmer with a large knowlege of web programming languages (HTML, CSS, PHP...) as well as some server side/other languages (Java, C++, Python...).
-			I have a passion for solving problems and learning ways that others have solved the problem.  I also enjoy tinkering with electronics to see how they were designed.  In addidion, I have created some of 
-			my own electronic devices which are listed in my portfolio below.</p>
+            <p>
+                I am a 17 year old computer programmer with a large knowlege of web programming languages
+                (HTML, CSS, PHP...) as well as some server side/other languages (Java, C++, Python...).
+                I have a passion for solving problems and learning ways that others have solved the problem.
+                I also enjoy tinkering with electronics to see how they were designed. In addition, I have created
+                some of my own electronic devices which are listed in my portfolio below.
+            </p>
             <div class="row">
-               <div class="columns contact-details">
-                  <h2>Contact Details</h2>
-                  <p class="address">
-					<span>Sam Roquitte</span><br>
-					<span><a href="mailto:samroq@yahoo.com">samroq@yahoo.com</a></span><br>
-					<span>(608) 203-5142</span>
-				  </p>
-               </div>
-               <div class="columns download">
-                  <p>
-                     <a href="resume.pdf" class="button" download><i class="fa fa-download"></i>Download Resume</a>
-                  </p>
-               </div>
+                <div class="columns contact-details">
+                    <h2>Contact Details</h2>
+                    <p class="address">
+                        <span>Sam Roquitte</span><br>
+                        <span><a href="mailto:samroq@yahoo.com">samroq@yahoo.com</a></span><br>
+                        <span>(608) 203-5142</span>
+                    </p>
+                </div>
+                <div class="columns download">
+                    <p>
+                        <a href="resume.pdf" class="button" download><i class="fa fa-download"></i>Download Resume</a>
+                    </p>
+                </div>
             </div> <!-- end row -->
-         </div> <!-- end .main-col -->
-      </div>
-   </section> <!-- About Section End-->
+        </div> <!-- end .main-col -->
+    </div>
+</section> <!-- About Section End-->
 
 
-   <!-- Resume Section -->
-   <section id="resume">
-      <!-- Education -->
-      <div class="row education">
-         <div class="three columns header-col">
+<!-- Resume Section -->
+<section id="resume">
+    <!-- Education -->
+    <div class="row education">
+        <div class="three columns header-col">
             <h1><span>Education</span></h1>
-         </div>
-         <div class="nine columns main-col">
+        </div>
+        <div class="nine columns main-col">
             <div class="row item">
-               <div class="twelve columns">
-                  <h3>Middleton High School</h3>
-                  <p class="info">Student <span>&bull;</span> <em class="date">2014-2018</em></p>
-                  <p>
-                  I am currently a student at Middleton High school.  I have completed several mathematics courses including: Algebra, Geometry, Pre Calculus, AP Calculus (2017-2018).  I am also taking other classes like AP Psycology and Honors Physics.  The computer classes that I have taken are
-				  Intro to computer science, AP Computer Science, Android App Independent Study, Machine Learning Independent Study.
-                  </p>
-               </div>
+                <div class="twelve columns">
+                    <h3>Middleton High School</h3>
+                    <p class="info">Student <span>&bull;</span> <em class="date">2014-2018</em></p>
+                    <p>
+                        I am currently a student at Middleton High school. I have completed several mathematics
+                        courses including: Algebra, Geometry, Pre Calculus, AP Calculus (2017-2018). I am also taking
+                        other classes like AP Psychology and Honors Physics. The computer classes that I have taken are
+                        Intro to computer science, AP Computer Science, Android App Independent Study,
+                        Machine Learning Independent Study.
+                    </p>
+                </div>
             </div> <!-- item end -->
             <div class="row item">
-               <div class="twelve columns">
-                  <h3>Northwestern University CTD</h3>
-                  <p class="info">Student <span>&bull;</span> <em class="date">Summer 2016</em></p>
-                  <p>
-                  This class taught me binary, hex etc. and the basics of electronics.  I created and programmed an Internet Of Things smart device and a finite state machine line following robot.  I also learned C++ and the basics of Arduinos.
-                  </p>
-               </div>
+                <div class="twelve columns">
+                    <h3>Northwestern University CTD</h3>
+                    <p class="info">Student <span>&bull;</span> <em class="date">Summer 2016</em></p>
+                    <p>
+                        This class taught me binary, hex etc. and the basics of electronics. I created and programmed
+                        an Internet Of Things smart device and a finite state machine line following robot. I also
+                        learned C++ and the basics of Arduinos.
+                    </p>
+                </div>
             </div> <!-- item end -->
-         </div> <!-- main-col end -->
-      </div> <!-- End Education -->
+        </div> <!-- main-col end -->
+    </div> <!-- End Education -->
 
-      <!-- Work -->
-      <div class="row work">
-         <div class="three columns header-col">
+    <!-- Work -->
+    <div class="row work">
+        <div class="three columns header-col">
             <h1><span>Work</span></h1>
-         </div>
-         <div class="nine columns main-col">
+        </div>
+        <div class="nine columns main-col">
             <div class="row item">
-               <div class="twelve columns">
-                  <h3>Wingra Direct</h3>
-                  <p class="info">Intern <span>&bull;</span> <em class="date">Summer 2015 & 2016</em></p>
-                  <p>
-                  Wingra Direct is an online retailer operating four niche retail sites: <a href="https://www.theruststore.com/">The Rust Store</a>, <a href="https://www.sharpeningsupplies.com">SharpeningSupplies.com</a>, <a href="https://www.wisconsingoods.com">WisconsinGoods.com</a>, and <a href="https://www.socksperts.com/">Socksperts</a>.  
-				  This company was formed several years ago and has ten employees.  I was hired over the last two summers as a technology intern.  
-				  As a startup, my role included everything from web design to processing orders and packing boxes when needed.  One of my biggest accomplishments was completely redesigning their main website (<a href="http://wingradirect.com/">wingradirect.com</a>).  
-				  This involved programming in HTML5, CSS, JavaScript as well as taking and editing photos for the website.  I also worked with the founder on Search Engine Optimization and advertising.
-                  </p>
-               </div>
-            </div> <!-- item end -->
-			<div class="row item">
-               <div class="twelve columns">
-                  <h3>Skylake Properties LLC</h3>
-                  <p class="info">Web Design <span>&bull;</span> <em class="date">2015</em></p>
-                  <p>
-                  In 2015 I started developing websites and was hired by a local real estate managment company to build their site (<a href="http://skylakeprop.com/">skylakeprop.com</a>).  I used HTML5, CSS, JavaScript, JQuery and bootstrap to create a responsive website with interactive image galleries.
-                  </p>
-               </div>
-            </div> <!-- item end -->
-         </div> <!-- main-col end -->
-      </div> <!-- End Work -->
-	  
-	  <!-- Extracurriculars -->
-	  <div class="row work">
-         <div class="three columns header-col">
-            <h1><span>Extracurriculars</span></h1>
-         </div>
-         <div class="nine columns main-col">
-            <div class="row item">
-               <div class="twelve columns">
-                  <h3>BadgerBOTS Robotics</h3>
-                  <p class="info">Head of Programming & Scouting <span>&bull;</span> <em class="date">2013-2018</em></p>
-                  <p>
-                  The FIRST Robotics Competition is an opportunity for students to work together to solve a common problem.  We design (CAD), build and program our robot which has advanced to the global competition the past two years.  
-				  My sophomore year, I developed a web app that allowed our team to gather competitive data with our phones instead of paper.  It used php and databases to store the data.
-				  The system also compiles and generalizes the data so that we can quickly and effectively determine team strategy.  This year, I am leading the overall programming effort (6 teammates) for the team.  Last summer, I led an effort to build a 3d printer.
-                  </p>
-               </div>
+                <div class="twelve columns">
+                    <h3>AkitaBox</h3>
+                    <p class="info">Javascript/Node.js <span>&bull;</span> <em class="date">Summer 2017</em></p>
+                    <p>
+                        During the summer of 2017, I interned at a local technology startup. There I learned about
+                        asynchronous and synchronous processes in Node.js. I worked on the company's hubot which
+                        communicates vital information from the webservers to the company employees such as when
+                        users try to login too many times or when any of the servers crash. I also worked with
+                        AWS services webhooks to pull information about the production servers and make sure
+                        that everything is running well.
+                    </p>
+                </div>
             </div> <!-- item end -->
             <div class="row item">
-               <div class="twelve columns">
-                  <h3>Rocket Club</h3>
-                  <p class="info">Lead Payload Monitoring System Engineer <span>&bull;</span> <em class="date">2017-Present</em></p>
-                  <p>
-                  The rocket club is part of the Rockets for Schools program which builds a 7-foot rocket with a payload inside.  Our team will participate in a launch with other teams and industry professionals.  My role is to lead a subgroup focused on developing a comprehensive monitoring system.  
-				  This will include sensors that collect temperature, rotation, pressure etc. and will log the data to an onboard computer.  We are using C++ to program the onboard computer.  This data will later be used to assess the effectiveness of the wind generators we have added to the rocket.
-                  </p>
-               </div>
+                <div class="twelve columns">
+                    <h3>Wingra Direct</h3>
+                    <p class="info">Intern <span>&bull;</span> <em class="date">Summer 2015 & 2016</em></p>
+                    <p>
+                        Wingra Direct is an online retailer operating four niche retail sites:
+                        <a href="https://www.theruststore.com/">The Rust Store</a>,
+                        <a href="https://www.sharpeningsupplies.com">SharpeningSupplies.com</a>,
+                        <a href="https://www.wisconsingoods.com">WisconsinGoods.com</a>, and
+                        <a href="https://www.socksperts.com/">Socksperts</a>.
+                        This company was formed several years ago and has ten employees. I was hired over the
+                        last two summers as a technology intern. As a startup, my role included everything from web
+                        design to processing orders and packing boxes when needed. One of my biggest accomplishments
+                        was completely redesigning their main website
+                        (<a href="http://wingradirect.com/">wingradirect.com</a>).
+                        This involved programming in HTML5, CSS, JavaScript as well as taking and editing photos for
+                        the website. I also worked with the founder on Search Engine Optimization and advertising.
+                    </p>
+                </div>
             </div> <!-- item end -->
-         </div> <!-- main-col end -->
-      </div> <!-- End Work -->
+            <div class="row item">
+                <div class="twelve columns">
+                    <h3>Skylake Properties LLC</h3>
+                    <p class="info">Web Design <span>&bull;</span> <em class="date">2015</em></p>
+                    <p>
+                        In 2015 I started developing websites and was hired by a local real estate managment company
+                        to build their site (<a href="http://skylakeprop.com/">skylakeprop.com</a>).
+                        I used HTML5, CSS, JavaScript, JQuery and bootstrap to create a responsive website with
+                        interactive image galleries.
+                    </p>
+                </div>
+            </div> <!-- item end -->
+        </div> <!-- main-col end -->
+    </div> <!-- End Work -->
 
-      <!-- Skills -->
-      <div class="row skill">
-         <div class="three columns header-col">
+    <!-- Extracurriculars -->
+    <div class="row work">
+        <div class="three columns header-col">
+            <h1><span>Extracurriculars</span></h1>
+        </div>
+        <div class="nine columns main-col">
+            <div class="row item">
+                <div class="twelve columns">
+                    <h3>BadgerBOTS Robotics</h3>
+                    <p class="info">Co-President <span>&bull;</span> <em class="date">2013-2018</em></p>
+                    <p>
+                        The FIRST Robotics Competition is an opportunity for students to work together to solve a common
+                        problem. We design (CAD), build and program our robot which has advanced to the global competition
+                        the past two years. My sophomore year, I developed a web app that allowed our team to gather
+                        competitive data with our phones instead of paper. It used php and databases to store the data.
+                        The system also compiles and generalizes the data so that we can quickly and effectively determine
+                        team strategy. My Junior year, I led the overall programming effort (6 teammates) for the team.
+                        I will be the Co-President of the club for my Senior year.
+                    </p>
+                </div>
+            </div> <!-- item end -->
+            <div class="row item">
+                <div class="twelve columns">
+                    <h3>Rocket Club</h3>
+                    <p class="info">Lead Payload Monitoring System Engineer <span>&bull;</span> <em class="date">2017-Present</em></p>
+                    <p>
+                        The rocket club is part of the Rockets for Schools program which builds a 7-foot rocket with a
+                        payload inside. Our team will participate in a launch with other teams and industry professionals.
+                        My role is to lead a subgroup focused on developing a comprehensive monitoring system.
+                        This will include sensors that collect temperature, rotation, pressure etc. and will log the data to
+                        an onboard computer. We are using an Arduino as the onboard computer. This data will later be
+                        used to assess the effectiveness of the wind generators we have added to the rocket.
+                    </p>
+                </div>
+            </div> <!-- item end -->
+        </div> <!-- main-col end -->
+    </div> <!-- End Work -->
+
+    <!-- Skills -->
+    <div class="row skill">
+        <div class="three columns header-col">
             <h1><span>Skills</span></h1>
-         </div>
-         <div class="nine columns main-col">
+        </div>
+        <div class="nine columns main-col">
             <p>
             </p>
-				<div class="bars">
-				   <ul class="skills">
-					   <li><span class="bar-expand java"></span><em>Java</em></li>
-                  <li><span class="bar-expand cpp"></span><em>C++</em></li>
-						<li><span class="bar-expand python"></span><em>Python</em></li>
-						<li><span class="bar-expand php"></span><em>PHP/SQL</em></li>
-						<li><span class="bar-expand html5"></span><em>HTML5/CSS</em></li>
-                  <li><span class="bar-expand jquery"></span><em>JavaScript/jQuery</em></li>
-					</ul>
-				</div><!-- end skill-bars -->
-			</div> <!-- main-col end -->
-      </div> <!-- End skills -->
-	</section> <!-- Resume Section End-->
+            <div class="bars">
+                <ul class="skills">
+                    <li><span class="bar-expand java"></span><em>Java</em></li>
+                    <li><span class="bar-expand cpp"></span><em>C++</em></li>
+                    <li><span class="bar-expand python"></span><em>Python</em></li>
+                    <li><span class="bar-expand php"></span><em>PHP/SQL</em></li>
+                    <li><span class="bar-expand html5"></span><em>HTML5/CSS</em></li>
+                    <li><span class="bar-expand jquery"></span><em>JavaScript(Node.js)/jQuery</em></li>
+                </ul>
+            </div><!-- end skill-bars -->
+        </div> <!-- main-col end -->
+    </div> <!-- End skills -->
+</section> <!-- Resume Section End-->
 
 
-   <!-- Portfolio Section -->
-	<section id="portfolio">
-		<div class="row">
-		  <div class="container">
-			<div class="categories">
-			  <ul class="cat">
-				<li>
-				  <ol class="type">
-					<li><a href="#" data-filter="*" class="active button">All</a></li>
-					<li><a href="#" data-filter=".programming" class="button">Programming</a></li>
-					<li><a href="#" data-filter=".web" class="button">Web Development</a></li>
-					<li><a href="#" data-filter=".hardware" class="button">Hardware</a></li>
-				  </ol>
-				</li>
-			  </ul>
-			  <div class="clearfix"></div>
-			</div>
-			<div class="row">
-			  <div class="portfolio-items">
-				<div class="col-sm-6 col-md-3 col-lg-3 programming web">
-				   <div class="columns portfolio-item">
-					  <div class="item-wrap">
-						 <a href="#modal-scouting" title="">
-							<img alt="" src="images/portfolio/scouting.png">
-							<div class="overlay">
-							   <div class="portfolio-item-meta">
-									  <h5>BadgerBOTS Scouting App</h5>
-								  <p>Programming, Web Development</p>
-								   </div>
-							</div>
-							<div class="link-icon"><i class="icon-plus"></i></div>
-						 </a>
-					  </div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3 col-lg-3 programming">
-				   <div class="columns portfolio-item">
-					  <div class="item-wrap">
-						 <a href="#modal-collegegrader" title="">
-							<img alt="" src="images/portfolio/collegegrader.png">
-							<div class="overlay">
-							   <div class="portfolio-item-meta">
-									  <h5>CollegeGrader Mobile App</h5>
-								  <p>Programming</p>
-								   </div>
-							</div>
-							<div class="link-icon"><i class="icon-plus"></i></div>
-						 </a>
-					  </div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3 col-lg-3 hardware">
-				   <div class="columns portfolio-item">
-					  <div class="item-wrap">
-						 <a href="#modal-pi" title="">
-							<img alt="" src="images/portfolio/pi.png">
-							<div class="overlay">
-							   <div class="portfolio-item-meta">
-									<h5>Handheld Portable Linux Computer</h5>
-									<p>Hardware</p>
-								</div>
-							</div>
-							<div class="link-icon"><i class="icon-plus"></i></div>
-						 </a>
-					  </div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3 col-lg-3 programming">
-				   <div class="columns portfolio-item">
-					  <div class="item-wrap">
-						 <a href="#modal-reddit" title="">
-							<img alt="" src="images/portfolio/reddit.png">
-							<div class="overlay">
-							   <div class="portfolio-item-meta">
-									  <h5>Python Reddit Bot</h5>
-								  <p>Programming</p>
-								   </div>
-							</div>
-							<div class="link-icon"><i class="icon-plus"></i></div>
-						 </a>
-
-					  </div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3 col-lg-3 web">
-				   <div class="columns portfolio-item">
-					  <div class="item-wrap">
-						 <a href="#modal-skylake" title="">
-							<img alt="" src="images/portfolio/skylake.png">
-							<div class="overlay">
-							   <div class="portfolio-item-meta">
-									  <h5>Skylake Properties Website</h5>
-								  <p>Web Development</p>
-								   </div>
-							</div>
-							<div class="link-icon"><i class="icon-plus"></i></div>
-						 </a>
-
-					  </div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3 col-lg-3 programming hardware">
-				   <div class="columns portfolio-item">
-					  <div class="item-wrap">
-						 <a href="#modal-rocket" title="">
-							<img alt="" src="images/portfolio/rfspayload.png">
-							<div class="overlay">
-							   <div class="portfolio-item-meta">
-									  <h5>Rocket Club Payload Monitoring System</h5>
-								  <p>Programming, Hardware</p>
-								   </div>
-							</div>
-							<div class="link-icon"><i class="icon-plus"></i></div>
-						 </a>
-
-					  </div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3 col-lg-3 web">
-				   <div class="columns portfolio-item">
-					  <div class="item-wrap">
-						 <a href="#modal-wingra" title="">
-							<img alt="" src="images/portfolio/wingra.png">
-							<div class="overlay">
-							   <div class="portfolio-item-meta">
-									  <h5>Wingra Direct Website</h5>
-								  <p>Web Development</p>
-								   </div>
-							</div>
-							<div class="link-icon"><i class="icon-plus"></i></div>
-						 </a>
-					  </div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3 col-lg-3 programming hardware">
-				   <div class="columns portfolio-item">
-					  <div class="item-wrap">
-						 <a href="#modal-ruby" title="">
-							<img alt="" src="images/portfolio/ruby.png">
-							<div class="overlay">
-							   <div class="portfolio-item-meta">
-									  <h5>BadgerBOTS Rube Goldberg Machine</h5>
-								  <p>Programming, Hardware</p>
-								   </div>
-							</div>
-							<div class="link-icon"><i class="icon-plus"></i></div>
-						 </a>
-					  </div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3 col-lg-3 web">
-				   <div class="columns portfolio-item">
-					  <div class="item-wrap">
-						 <a href="#modal-tba" title="">
-							<img alt="" src="images/portfolio/tbaToSlack.png">
-							<div class="overlay">
-							   <div class="portfolio-item-meta">
-									  <h5>The Blue Alliance Slack Hook</h5>
-								  <p>Web Development</p>
-								   </div>
-							</div>
-							<div class="link-icon"><i class="icon-plus"></i></div>
-						 </a>
-					  </div>
-					</div>
-				</div>
-			  </div>
-			</div>
-		  </div>
-
-		 <!-- Modal Popup -->
-
-		<div id="modal-scouting" class="popup-modal mfp-hide">
-			<img class="scale-with-grid" src="images/portfolio/scouting1.png" alt="" />
-			<div class="description-box">
-				<h4>BadgerBOTS Scouting App</h4>
-				<p>My sophomore year (2015-16 Season), I led a team that developed an app that allowed us to gather competitive data with our phones instead of paper.  All of the data is compiled in a database and can be accessed and printed out for the drive team before each match.  
-				It uses PHP, MYSQL, HTML, CSS, and JavaScript.  It has also been upgraded with OAUTH2 login support, its own login system and API from a robotics match website (<a href="https://www.thebluealliance.com/" target="_blank">thebluealliance.com</a>)</p>
-			<span class="categories"><i class="fa fa-tag"></i>Programming, Web Development</span>
-			</div>
-			<div class="link-box">
-				<a class="popup-modal-dismiss">Close</a>
-			</div>
-		</div>
-		<div id="modal-collegegrader" class="popup-modal mfp-hide">
-			<img class="scale-with-grid" src="images/portfolio/collegegrader.png" alt="" />
-			<div class="description-box">
-				<h4>CollegeGrader Mobile App</h4>
-				<p>I have been working on my first mobile app which will allow high school students to evaluate and compare colleges.</p>
-				<span class="categories"><i class="fa fa-tag"></i>Programming</span>
-			</div>
-			<div class="link-box">
-				<a class="popup-modal-dismiss">Close</a>
-			</div>
-		</div>
-		<div id="modal-pi" class="popup-modal mfp-hide">
-			<img class="scale-with-grid" src="images/portfolio/pi1.jpg" alt="" />
-			<div class="description-box">
-				<h4>Handheld Portable Linux Computer</h4>
-				<p>In 2016 I started a project to create a handheld computer that runs the popular operating system Linux.  I created + soldered the circuitry and designed + 3D printed a case.</p>
-				<span class="categories"><i class="fa fa-tag"></i>Hardware</span>
-			</div>
-			<div class="link-box">
-				<a class="popup-modal-dismiss">Close</a>
-			</div>
-		</div>
-		 <div id="modal-reddit" class="popup-modal mfp-hide">
-			  <img class="scale-with-grid" src="images/portfolio/reddit1.PNG" alt="" />
-			  <div class="description-box">
-				<h4>Python Reddit Bot</h4>
-				<p>In my spare time, I created a bot user for the popular social media platform Reddit.  It was written in python and generates fun responses to certain questions.</p>
-				<span class="categories"><i class="fa fa-tag"></i>Programming</span>
-			  </div>
-			<div class="link-box">
-				<a class="popup-modal-dismiss">Close</a>
-			</div>
-		  </div>
-		 <div id="modal-skylake" class="popup-modal mfp-hide">
-			  <img class="scale-with-grid" src="images/portfolio/skylake1.PNG" alt="" />
-			  <div class="description-box">
-				<h4>Skylake Properties Website</h4>
-				<p>In 2014, I created a responsive website for a local real estate company on a freelance basis.  I also setup email services, web hosting, and domain reservation.</p>
-				<span class="categories"><i class="fa fa-tag"></i>Web Development</span>
-			  </div>
-			<div class="link-box">
-			   <a href="http://skylakeprop.com/" target="_blank">View Site</a>
-				 <a class="popup-modal-dismiss">Close</a>
-			</div>
-		  </div>
-	 <div id="modal-rocket" class="popup-modal mfp-hide">
-		<div class="description-box">
-			<video width="100%" controls>
-			  <source src="images/portfolio/rocketlaunch.mp4" type="video/mp4">
-			  Your browser does not support HTML5 video.
-			</video>
-			<h4>Rocket Club Payload Monitoring System</h4>
-			<p>I led a group of students in creating a system that collects various data while the rocket is flying.  It used an Arduino connected to some sensors and wrote data to a SD card.  All of the code for the Arduino is avaliable on my Github page (linked below) as well as the data we collected and a python script that I wrote to graph the data.</p>
-		    <span class="categories"><i class="fa fa-tag"></i>Programming, Hardware</span>
-		</div>
-		<div class="link-box">
-		   <a href="https://github.com/bobdabiulder/Box-O-Chocolates" target="_blank">View Data, Code & Python Graphing Script</a>
-			<a class="popup-modal-dismiss">Close</a>
-		</div>
-	  </div>
-	 <div id="modal-wingra" class="popup-modal mfp-hide">
-		  <img class="scale-with-grid" src="images/portfolio/wingra1.PNG" alt="" />
-		  <div class="description-box">
-			  <h4>Wingra Direct Website</h4>
-			  <p>While working at a local online retail company, I was asked to create a new website.  The new website is fully responsive and mobile friendly and contains photos that I took.</p>
-		   <span class="categories"><i class="fa fa-tag"></i>Web Development</span>
-		  </div>
-		<div class="link-box">
-		   <a href="http://www.wingradirect.com" target="_blank">View Site</a>
-			 <a class="popup-modal-dismiss">Close</a>
-		</div>
-	  </div>
-	 <div id="modal-ruby" class="popup-modal mfp-hide">
-		  <div class="description-box">
-			<video width="100%" controls>
-			  <source src="images/portfolio/ruby1.mp4" type="video/mp4">
-			  Your browser does not support HTML5 video.
-			</video>
-			  <h4>BadgerBOTS Rube Goldberg Machine</h4>
-			  <p>I did all of the electronics (servos & lights controlled by an Arduino) for a rube goldberg machine that was built for the BadgerBOTS Chairman's team to use as a speaking aid.  We later won the Chairman's award at the LaCrosse regional.</p>
-		   <span class="categories"><i class="fa fa-tag"></i>Programming, Hardware</span>
-		  </div>
-		<div class="link-box">
-		   <a href="https://github.com/team1306/rube" target="_blank">View Code</a>
-			<a class="popup-modal-dismiss">Close</a>
-		</div>
-	  </div>
-	 <div id="modal-tba" class="popup-modal mfp-hide">
-		  <img class="scale-with-grid" src="images/portfolio/tbaToSlack1.png" alt="" />
-		  <div class="description-box">
-			  <h4>The Blue Alliance Slack Hook</h4>
-			  <p>I wrote a PHP file that will post on Slack (our team's communication service) when our robot is going to play a match.  This involved using webhooks from The Blue Alliance and the code is avaliable on the Github repository linked below.</p>
-		   <span class="categories"><i class="fa fa-tag"></i>Web Development</span>
-		  </div>
-		<div class="link-box">
-		   <a href="https://github.com/samr28/tba-to-slack-php" target="_blank">View Code</a>
-			<a class="popup-modal-dismiss">Close</a>
-		</div>
-	  </div>
-  </div> <!-- row End -->
-	</section>
-   
-
-   <!-- Contact Section -->
-   <section id="contact">
-         <div class="row section-head">
-            <div class="two columns header-col">
+<!-- Portfolio Section -->
+<section id="portfolio">
+    <div class="row">
+        <div class="container">
+            <div class="categories">
+                <ul class="cat">
+                    <li>
+                        <ol class="type">
+                            <li><a href="#" data-filter="*" class="active button">All</a></li>
+                            <li><a href="#" data-filter=".programming" class="button">Programming</a></li>
+                            <li><a href="#" data-filter=".web" class="button">Web Development</a></li>
+                            <li><a href="#" data-filter=".hardware" class="button">Hardware</a></li>
+                        </ol>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
             </div>
-            <div class="ten columns">
-                  <h2 style="color:#fff; text-align:center;">Contact Me</h2>
+            <div class="row">
+                <div class="portfolio-items">
+                    <div class="col-sm-6 col-md-3 col-lg-3 programming web">
+                        <div class="columns portfolio-item">
+                            <div class="item-wrap">
+                                <a href="#modal-scouting" title="">
+                                    <img alt="" src="images/portfolio/scouting.png">
+                                    <div class="overlay">
+                                        <div class="portfolio-item-meta">
+                                            <h5>BadgerBOTS Scouting App</h5>
+                                            <p>Programming, Web Development</p>
+                                        </div>
+                                    </div>
+                                    <div class="link-icon"><i class="icon-plus"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3 programming">
+                        <div class="columns portfolio-item">
+                            <div class="item-wrap">
+                                <a href="#modal-collegegrader" title="">
+                                    <img alt="" src="images/portfolio/collegegrader.png">
+                                    <div class="overlay">
+                                        <div class="portfolio-item-meta">
+                                            <h5>CollegeGrader Mobile App</h5>
+                                            <p>Programming</p>
+                                        </div>
+                                    </div>
+                                    <div class="link-icon"><i class="icon-plus"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3 hardware">
+                        <div class="columns portfolio-item">
+                            <div class="item-wrap">
+                                <a href="#modal-pi" title="">
+                                    <img alt="" src="images/portfolio/pi.png">
+                                    <div class="overlay">
+                                        <div class="portfolio-item-meta">
+                                            <h5>Handheld Portable Linux Computer</h5>
+                                            <p>Hardware</p>
+                                        </div>
+                                    </div>
+                                    <div class="link-icon"><i class="icon-plus"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3 programming">
+                        <div class="columns portfolio-item">
+                            <div class="item-wrap">
+                                <a href="#modal-reddit" title="">
+                                    <img alt="" src="images/portfolio/reddit.png">
+                                    <div class="overlay">
+                                        <div class="portfolio-item-meta">
+                                            <h5>Python Reddit Bot</h5>
+                                            <p>Programming</p>
+                                        </div>
+                                    </div>
+                                    <div class="link-icon"><i class="icon-plus"></i></div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3 web">
+                        <div class="columns portfolio-item">
+                            <div class="item-wrap">
+                                <a href="#modal-skylake" title="">
+                                    <img alt="" src="images/portfolio/skylake.png">
+                                    <div class="overlay">
+                                        <div class="portfolio-item-meta">
+                                            <h5>Skylake Properties Website</h5>
+                                            <p>Web Development</p>
+                                        </div>
+                                    </div>
+                                    <div class="link-icon"><i class="icon-plus"></i></div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3 programming hardware">
+                        <div class="columns portfolio-item">
+                            <div class="item-wrap">
+                                <a href="#modal-rocket" title="">
+                                    <img alt="" src="images/portfolio/rfspayload.png">
+                                    <div class="overlay">
+                                        <div class="portfolio-item-meta">
+                                            <h5>Rocket Club Payload Monitoring System</h5>
+                                            <p>Programming, Hardware</p>
+                                        </div>
+                                    </div>
+                                    <div class="link-icon"><i class="icon-plus"></i></div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3 web">
+                        <div class="columns portfolio-item">
+                            <div class="item-wrap">
+                                <a href="#modal-wingra" title="">
+                                    <img alt="" src="images/portfolio/wingra.png">
+                                    <div class="overlay">
+                                        <div class="portfolio-item-meta">
+                                            <h5>Wingra Direct Website</h5>
+                                            <p>Web Development</p>
+                                        </div>
+                                    </div>
+                                    <div class="link-icon"><i class="icon-plus"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3 programming hardware">
+                        <div class="columns portfolio-item">
+                            <div class="item-wrap">
+                                <a href="#modal-ruby" title="">
+                                    <img alt="" src="images/portfolio/ruby.png">
+                                    <div class="overlay">
+                                        <div class="portfolio-item-meta">
+                                            <h5>BadgerBOTS Rube Goldberg Machine</h5>
+                                            <p>Programming, Hardware</p>
+                                        </div>
+                                    </div>
+                                    <div class="link-icon"><i class="icon-plus"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3 web">
+                        <div class="columns portfolio-item">
+                            <div class="item-wrap">
+                                <a href="#modal-tba" title="">
+                                    <img alt="" src="images/portfolio/tbaToSlack.png">
+                                    <div class="overlay">
+                                        <div class="portfolio-item-meta">
+                                            <h5>The Blue Alliance Slack Hook</h5>
+                                            <p>Web Development</p>
+                                        </div>
+                                    </div>
+                                    <div class="link-icon"><i class="icon-plus"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
-         <div class="row">
-		    <form method="POST" action="https://script.google.com/macros/s/AKfycbxVugF5Lhv6gywcpk9m_4TyCyt8sH0vODW_go8qcatfK4JgMJit/exec" id="gform">
-				<fieldset>
-					  <div>
-							   <label for="contactName">Name <span class="required">*</span></label>
-							   <input type="text" value="" size="35" id="contactName" name="contactName">
-					  </div>
-					  <div>
-							   <label for="contactEmail">Email <span class="required">*</span></label>
-							   <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
-					  </div>
-					  <div>
-							   <label for="contactSubject">Subject</label>
-							   <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
-					  </div>
-					  <div>
-						 <label for="contactMessage">Message <span class="required">*</span></label>
-						 <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
-					  </div>
-					  <div>
-						 <button class="submit">Submit</button>
-						 <span id="image-loader">
+        </div>
+
+        <!-- Modal Popup -->
+
+        <div id="modal-scouting" class="popup-modal mfp-hide">
+            <img class="scale-with-grid" src="images/portfolio/scouting1.png" alt="" />
+            <div class="description-box">
+                <h4>BadgerBOTS Scouting App</h4>
+                <p>
+                    My sophomore year (2015-16 Season), I led a team that developed an app that allowed us to gather
+                    competitive data with our phones instead of paper. All of the data is compiled in a database and
+                    can be accessed and printed out for the drive team before each match.
+                    It uses PHP, MYSQL, HTML, CSS, and JavaScript. It has also been upgraded with OAUTH2 login support,
+                    its own login system and API from a robotics match website
+                    (<a href="https://www.thebluealliance.com/" target="_blank">thebluealliance.com</a>)
+                </p>
+                <span class="categories"><i class="fa fa-tag"></i>Programming, Web Development</span>
+            </div>
+            <div class="link-box">
+                <a class="popup-modal-dismiss">Close</a>
+            </div>
+        </div>
+        <div id="modal-collegegrader" class="popup-modal mfp-hide">
+            <img class="scale-with-grid" src="images/portfolio/collegegrader.png" alt="" />
+            <div class="description-box">
+                <h4>CollegeGrader Mobile App</h4>
+                <p>
+                    I have been working on my first mobile app which will allow high school students to evaluate
+                    and compare colleges.
+                </p>
+                <span class="categories"><i class="fa fa-tag"></i>Programming</span>
+            </div>
+            <div class="link-box">
+                <a class="popup-modal-dismiss">Close</a>
+            </div>
+        </div>
+        <div id="modal-pi" class="popup-modal mfp-hide">
+            <img class="scale-with-grid" src="images/portfolio/pi1.jpg" alt="" />
+            <div class="description-box">
+                <h4>Handheld Portable Linux Computer</h4>
+                <p>
+                    In 2016 I started a project to create a handheld computer that runs the popular operating system
+                    Linux. I created + soldered the circuitry and designed + 3D printed a case.
+                </p>
+                <span class="categories"><i class="fa fa-tag"></i>Hardware</span>
+            </div>
+            <div class="link-box">
+                <a class="popup-modal-dismiss">Close</a>
+            </div>
+        </div>
+        <div id="modal-reddit" class="popup-modal mfp-hide">
+            <img class="scale-with-grid" src="images/portfolio/reddit1.PNG" alt="" />
+            <div class="description-box">
+                <h4>Python Reddit Bot</h4>
+                <p>
+                    In my spare time, I created a bot user for the popular social media platform Reddit. It was
+                    written in python and generates fun responses to certain questions.
+                </p>
+                <span class="categories"><i class="fa fa-tag"></i>Programming</span>
+            </div>
+            <div class="link-box">
+                <a class="popup-modal-dismiss">Close</a>
+            </div>
+        </div>
+        <div id="modal-skylake" class="popup-modal mfp-hide">
+            <img class="scale-with-grid" src="images/portfolio/skylake1.PNG" alt="" />
+            <div class="description-box">
+                <h4>Skylake Properties Website</h4>
+                <p>
+                    In 2014, I created a responsive website for a local real estate company on a freelance basis.
+                    I also setup email services, web hosting, and domain reservation.
+                </p>
+                <span class="categories"><i class="fa fa-tag"></i>Web Development</span>
+            </div>
+            <div class="link-box">
+                <a href="http://skylakeprop.com/" target="_blank">View Site</a>
+                <a class="popup-modal-dismiss">Close</a>
+            </div>
+        </div>
+        <div id="modal-rocket" class="popup-modal mfp-hide">
+            <div class="description-box">
+                <video width="100%" controls>
+                    <source src="images/portfolio/rocketlaunch.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+                <h4>Rocket Club Payload Monitoring System</h4>
+                <p>
+                    I led a group of students in creating a system that collects various data while the rocket is
+                    flying. It used an Arduino connected to some sensors and wrote data to a SD card.
+                    All of the code for the Arduino is avaliable on my Github page (linked below) as well as the data
+                    we collected and a python script that I wrote to graph the data.
+                </p>
+                <span class="categories"><i class="fa fa-tag"></i>Programming, Hardware</span>
+            </div>
+            <div class="link-box">
+                <a href="https://github.com/bobdabiulder/Box-O-Chocolates" target="_blank">View Data, Code & Python Graphing Script</a>
+                <a class="popup-modal-dismiss">Close</a>
+            </div>
+        </div>
+        <div id="modal-wingra" class="popup-modal mfp-hide">
+            <img class="scale-with-grid" src="images/portfolio/wingra1.PNG" alt="" />
+            <div class="description-box">
+                <h4>Wingra Direct Website</h4>
+                <p>
+                    While working at a local online retail company, I was asked to create a new website.
+                    The new website is fully responsive and mobile friendly and contains photos that I took.
+                </p>
+                <span class="categories"><i class="fa fa-tag"></i>Web Development</span>
+            </div>
+            <div class="link-box">
+                <a href="http://www.wingradirect.com" target="_blank">View Site</a>
+                <a class="popup-modal-dismiss">Close</a>
+            </div>
+        </div>
+        <div id="modal-ruby" class="popup-modal mfp-hide">
+            <div class="description-box">
+                <video width="100%" controls>
+                    <source src="images/portfolio/ruby1.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+                <h4>BadgerBOTS Rube Goldberg Machine</h4>
+                <p>
+                    I did all of the electronics (servos & lights controlled by an Arduino) for a rube goldberg
+                    machine that was built for the BadgerBOTS Chairman's team to use as a speaking aid.
+                    We later won the Chairman's award at the LaCrosse regional.
+                </p>
+                <span class="categories"><i class="fa fa-tag"></i>Programming, Hardware</span>
+            </div>
+            <div class="link-box">
+                <a href="https://github.com/team1306/rube" target="_blank">View Code</a>
+                <a class="popup-modal-dismiss">Close</a>
+            </div>
+        </div>
+        <div id="modal-tba" class="popup-modal mfp-hide">
+            <img class="scale-with-grid" src="images/portfolio/tbaToSlack1.png" alt="" />
+            <div class="description-box">
+                <h4>The Blue Alliance Slack Hook</h4>
+                <p>
+                    I wrote a PHP file that will post on Slack (our team's communication service) when our robot is
+                    going to play a match. This involved using webhooks from The Blue Alliance and the code is
+                    available on the Github repository linked below.
+                </p>
+                <span class="categories"><i class="fa fa-tag"></i>Web Development</span>
+            </div>
+            <div class="link-box">
+                <a href="https://github.com/samr28/tba-to-slack-php" target="_blank">View Code</a>
+                <a class="popup-modal-dismiss">Close</a>
+            </div>
+        </div>
+    </div> <!-- row End -->
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="row section-head">
+        <div class="two columns header-col">
+        </div>
+        <div class="ten columns">
+            <h2 style="color:#fff; text-align:center;">Contact Me</h2>
+        </div>
+    </div>
+    <div class="row">
+        <form method="POST" action="https://script.google.com/macros/s/AKfycbxVugF5Lhv6gywcpk9m_4TyCyt8sH0vODW_go8qcatfK4JgMJit/exec" id="gform">
+            <fieldset>
+                <div>
+                    <label for="contactName">Name <span class="required">*</span></label>
+                    <input type="text" value="" size="35" id="contactName" name="contactName">
+                </div>
+                <div>
+                    <label for="contactEmail">Email <span class="required">*</span></label>
+                    <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
+                </div>
+                <div>
+                    <label for="contactSubject">Subject</label>
+                    <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
+                </div>
+                <div>
+                    <label for="contactMessage">Message <span class="required">*</span></label>
+                    <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                </div>
+                <div>
+                    <button class="submit">Submit</button>
+                    <span id="image-loader">
 							<img alt="" src="images/loader.gif">
 						 </span>
-					  </div>
-				</fieldset>
-			</form>
-			<div style="display:none;" id="thankyou_message">
-				<h2 style="color:#fff; text-align:center;"><i class="fa fa-check"></i> Your message has been sent!</h2>
-			</div>
-		</div>
-   </section> <!-- Contact Section End-->
-   
-   <!-- footer -->
-   <footer>
-      <div class="row">
-         <div class="twelve columns">
+                </div>
+            </fieldset>
+        </form>
+        <div style="display:none;" id="thankyou_message">
+            <h2 style="color:#fff; text-align:center;"><i class="fa fa-check"></i> Your message has been sent!</h2>
+        </div>
+    </div>
+</section> <!-- Contact Section End-->
+
+<!-- footer -->
+<footer>
+    <div class="row">
+        <div class="twelve columns">
             <ul class="social-links">
-               <li><a href="mailto:samroq@yahoo.com"><i class="fa fa-envelope-o"></i></a></li>
-               <li><a href="https://plus.google.com/116592746472102313790"><i class="fa fa-google-plus"></i></a></li>
-               <li><a href="https://www.linkedin.com/in/samroquitte/"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="https://github.com/samr28"><i class="fa fa-github"></i></a></li>
+                <li><a href="mailto:samroq@yahoo.com"><i class="fa fa-envelope-o"></i></a></li>
+                <li><a href="https://plus.google.com/116592746472102313790"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/samroquitte/"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/samr28"><i class="fa fa-github"></i></a></li>
             </ul>
             <ul class="copyright">
-               <li>&copy; Copyright 2017 Sam Roquitte</li>
-               <li>Design by Styleshout & Sam Roquitte</li>   
+                <li>&copy; Copyright 2017 Sam Roquitte</li>
+                <li>Design by Styleshout & Sam Roquitte</li>
             </ul>
-         </div>
-         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
-      </div>
-   </footer> <!-- Footer End-->
+        </div>
+        <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+    </div>
+</footer> <!-- Footer End-->
 
-   <!-- Javascript-->
-   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+<!-- Javascript-->
+<script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
 
-   <script src="js/jquery.flexslider.js"></script>
-   <script src="js/waypoints.js"></script>
-   <script src="js/jquery.fittext.js"></script>
-   <script src="js/magnific-popup.js"></script>
-   <script src="js/init.js"></script>
-   
-   <script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
-   <script type="text/javascript" src="js/bootstrap.js"></script> 
-   <script type="text/javascript" src="js/jquery.isotope.js"></script> 
-   <script type="text/javascript" src="js/main.js"></script>
-   
-   <script>
-   
-function validEmail(email) {
-  var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-  return re.test(email);
-}
-// get all data in form and return object
-function getFormData() {
-  var elements = document.getElementById("gform").elements; // all form elements
-  var fields = Object.keys(elements).map(function(k) {
-    if(elements[k].name !== undefined) {
-      return elements[k].name;
-    // special case for Edge's html collection
-    }else if(elements[k].length > 0){
-      return elements[k].item(0).name;
+<script src="js/jquery.flexslider.js"></script>
+<script src="js/waypoints.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<script src="js/magnific-popup.js"></script>
+<script src="js/init.js"></script>
+
+<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+<script>
+
+    function validEmail(email) {
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        return re.test(email);
     }
-  }).filter(function(item, pos, self) {
-    return self.indexOf(item) == pos && item;
-  });
-  var data = {};
-  fields.forEach(function(k){
-    data[k] = elements[k].value;
-    if(elements[k].type === "checkbox"){
-      data[k] = elements[k].checked;
-    // special case for Edge's html collection
-    }else if(elements[k].length){
-      for(var i = 0; i < elements[k].length; i++){
-        if(elements[k].item(i).checked){
-          data[k] = elements[k].item(i).value;
-        }
-      }
+    // get all data in form and return object
+    function getFormData() {
+        var elements = document.getElementById("gform").elements; // all form elements
+        var fields = Object.keys(elements).map(function(k) {
+            if(elements[k].name !== undefined) {
+                return elements[k].name;
+                // special case for Edge's html collection
+            }else if(elements[k].length > 0){
+                return elements[k].item(0).name;
+            }
+        }).filter(function(item, pos, self) {
+            return self.indexOf(item) == pos && item;
+        });
+        var data = {};
+        fields.forEach(function(k){
+            data[k] = elements[k].value;
+            if(elements[k].type === "checkbox"){
+                data[k] = elements[k].checked;
+                // special case for Edge's html collection
+            }else if(elements[k].length){
+                for(var i = 0; i < elements[k].length; i++){
+                    if(elements[k].item(i).checked){
+                        data[k] = elements[k].item(i).value;
+                    }
+                }
+            }
+        });
+        console.log(data);
+        return data;
     }
-  });
-  console.log(data);
-  return data;
-}
 
-function handleFormSubmit(event) {
-  event.preventDefault();
-  var data = getFormData();
-    var url = event.target.action;
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', url);
-    // xhr.withCredentials = true;
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onreadystatechange = function() {
-        console.log( xhr.status, xhr.statusText )
-        console.log(xhr.responseText);
-        document.getElementById('gform').style.display = 'none'; // hide form
-        document.getElementById('thankyou_message').style.display = 'block';
-        return;
-    };
-    // url encode form data for sending as post data
-    var encoded = Object.keys(data).map(function(k) {
-        return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-    }).join('&')
-    xhr.send(encoded);
-  }
-function loaded() {
-  console.log('contact form submission handler loaded successfully');
-  // bind to the submit event of our form
-  var form = document.getElementById('gform');
-  form.addEventListener("submit", handleFormSubmit, false);
-};
-document.addEventListener('DOMContentLoaded', loaded, false);
-   </script>
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        var data = getFormData();
+        var url = event.target.action;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url);
+        // xhr.withCredentials = true;
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            console.log( xhr.status, xhr.statusText );
+            console.log(xhr.responseText);
+            document.getElementById('gform').style.display = 'none'; // hide form
+            document.getElementById('thankyou_message').style.display = 'block';
+
+        };
+        // url encode form data for sending as post data
+        var encoded = Object.keys(data).map(function(k) {
+            return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+        }).join('&');
+        xhr.send(encoded);
+    }
+    function loaded() {
+        console.log('contact form submission handler loaded successfully');
+        // bind to the submit event of our form
+        var form = document.getElementById('gform');
+        form.addEventListener("submit", handleFormSubmit, false);
+    }
+    document.addEventListener('DOMContentLoaded', loaded, false);
+</script>
 
 </body>
 
