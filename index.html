@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/media-queries.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/custom.css">
 
     <!-- Script
     ================================================== -->
@@ -40,6 +41,9 @@
     <!-- Stylesheet
     ================================================== -->
     <link rel="stylesheet" type="text/css" href="css/portfolio.css">
+
+    <!-- Dev icons -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 
     <script>
         var TxtType = function (el, toRotate, period) {
@@ -188,8 +192,7 @@
                         <h2>Contact Details</h2>
                         <p class="address">
                             <span>Sam Roquitte</span><br>
-                            <span><a href="mailto:sam@roquitte.com">sam@roquitte.com</a></span><br>
-                            <span>(608) 807-9363</span>
+                            <span><a href="mailto:sam@roquitte.com">sam@roquitte.com</a></span>
                         </p>
                     </div>
                     <div class="columns download">
@@ -239,6 +242,7 @@
                     <div class="twelve columns">
                         <h3>Georgia Tech College of Computing</h3>
                         <p class="info">Systems and Networks Teaching Assistant <span>&bull;</span> <em class="date">Fall 2019, Spring 2020</em></p>
+                        <p class="info">Head Teaching Assistant <span>&bull;</span> <em class="date">Fall 2020</em></p>
                         <p>
                             One of 14 undergraduate teaching assistants teaching weekly recitations. Our class teaches students 
                             about processors, multithreading, networking, and processor scheduling through circuit simulation and 
@@ -246,11 +250,17 @@
                             on projects and homework.
                         </p>
                     </div>
-                </div> <!-- item end -->
+                </div>
+                <div class="row item">
+                    <div class="twelve columns">
+                        <h3>Refin</h3>
+                        <p class="info">Software Developer Intern - Rescinded due to COVID-19<span>&bull;</span> <em class="date">Summer 2020</em></p>
+                    </div>
+                </div>
                 <div class="row item">
                     <div class="twelve columns">
                         <h3>eCIO</h3>
-                        <p class="info">Software Developer Intern<span>&bull;</span> <em class="date">Summer 2019</em></p>
+                        <p class="info">Software Developer Intern<span>&bull;</span> <em class="date">Summer 2019 & 2020</em></p>
                         <p>
                             Worked with another developer to build out the company's MVP webapp (React + Mobx). 
                             I built out many different features including user profile, organization service, 
@@ -258,7 +268,7 @@
                             These features helped eCIO market and onboard their first fee paying clients.
                         </p>
                     </div>
-                </div> <!-- item end -->
+                </div>
                 <div class="row item">
                     <div class="twelve columns">
                         <h3>AkitaBox</h3>
@@ -272,78 +282,42 @@
                             Through these two summers, I was also exposed to the agile development model.
                         </p>
                     </div>
-                </div> <!-- item end -->
-            </div> <!-- main-col end -->
-        </div> <!-- End Work -->
-
-        <!-- Extracurriculars -->
-        <div class="row">
-            <div class="three columns header-col">
-                <h1><span>Extracurriculars</span></h1>
-            </div>
-            <div class="nine columns main-col">
-                <div class="row item">
-                    <div class="twelve columns">
-                        <h3>Robojackets - GATech's competitive robotics team</h3>
-                        <p class="info">Member of Outreach & IGVC <span>&bull;</span> <em class="date">2018-Present</em></p>
-                        <p>
-                            I've been working with the outreach team to voulenteer at robotics tournaments and
-                            mentor high school students in FRC. In addition, I'm currently helping to create educational 
-                            videos to teach new teams how to build their robot. I am also a member of the software team
-                            for the Intelegent Ground Vehicle Competition (IGVC) team where
-                            I'm working on training a semantic segmentation neural network to detect lines and obstacles.
-                        </p>
-                    </div>
-                </div> <!-- item end -->
-                <div class="row item">
-                    <div class="twelve columns">
-                        <h3>BadgerBOTS Robotics</h3>
-                        <p class="info">Co-President <span>&bull;</span> <em class="date">2013-2018</em></p>
-                        <p>
-                            The FIRST Robotics Competition is an opportunity for students to work together to solve a
-                            common problem. We design (CAD - SolidWorks), build and program our robot which has
-                            advanced to
-                            the global competition the past two years. My sophomore year, I developed a web app that
-                            allowed our team to
-                            gather
-                            competitive data with our phones instead of paper. It used php and a centeralized MYSQL
-                            database.
-                            The system also compiles and generalizes the data so that we can quickly and effectively
-                            determine
-                            team strategy with the most recent data right before each match. My Junior year, I led the
-                            overall
-                            programming effort for the team. During my Senior year, I became the co-president of the
-                            team. In this role, I
-                            took on many new challenges like finances and buisness while still helping out with the
-                            robot.
-                        </p>
-                    </div>
-                </div> <!-- item end -->
+                </div>
             </div> <!-- main-col end -->
         </div> <!-- End Work -->
 
         <!-- Skills -->
-        <!--
+        
         <div class="row skill">
             <div class="three columns header-col">
                 <h1><span>Skills</span></h1>
             </div>
             <div class="nine columns main-col">
-                <p>
-                </p>
-                <div class="bars">
-                    <ul class="skills">
-                        <li><span class="bar-expand javascript"></span><em>JavaScript/Node</em></li>
-                        <li><span class="bar-expand java"></span><em>Java</em></li>
-                        <li><span class="bar-expand cpp"></span><em>C/C++</em></li>
-                        <li><span class="bar-expand python"></span><em>Python</em></li>
-                        <li><span class="bar-expand php"></span><em>PHP/SQL</em></li>
-                        <li><span class="bar-expand html5"></span><em>HTML5/CSS</em></li>
-                    </ul>
-                </div>
+                <h4 class="skills-item">Languages:
+                    <span class="badge"><i class="devicon-java-plain colored"></i> Java</span>
+                    <span class="badge"><i class="devicon-c-plain colored"></i> C</span>
+                    <span class="badge"><i class="devicon-python-plain colored"></i> Python</span>
+                    <span class="badge"><i class="devicon-javascript-plain colored"></i> Javascript</span>
+                    <span class="badge"><i class="devicon-html5-plain colored"></i> HTML</span>
+                    <span class="badge"><i class="devicon-php-plain colored"></i> PHP</span>
+                </h4>
+                <h4 class="skills-item">Web: 
+                    <span class="badge"><i class="devicon-nodejs-plain colored"></i> NodeJS</span>
+                    <span class="badge"><i class="devicon-react-original colored"></i> React</span>
+                    <span class="badge"><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
+                    <span class="badge"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+                    <span class="badge"><i class="devicon-redis-plain colored"></i> Redis</span>
+                    <span class="badge"><i class="devicon-nginx-original colored"></i> NGINX</span>
+                </h4>
+                <h4>Platforms & Networking:
+                    <span class="badge"><i class="devicon-ubuntu-plain colored"></i> Linux (Ubuntu, Debian)</span>
+                    <span class="badge">DNS Configuration</span>
+                    <span class="badge">SSL Certificates</span>
+                    <span class="badge">Routing & Proxies</span>
+                </h4>
             </div>
         </div>
-    -->
+   
     </section>
 
 
