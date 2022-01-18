@@ -9,6 +9,9 @@ a:hover, a:focus {
 #portfolio {
 	/*padding: 120px 0;*/
 }
+.portfolio-container {
+	width: 100%;
+}
 .categories {
 	padding-bottom: 30px;
 	text-align: center;
@@ -16,9 +19,15 @@ a:hover, a:focus {
 ul.cat li {
 	display: inline-block;
 }
+ol.type {
+	margin-left: 0px;
+}
 ol.type li {
 	display: inline-block;
 	margin-left: 20px;
+}
+ol.type li:first-of-type {
+	margin-left: 0px;
 }
 ol.type li a {
 	/*border: 1px solid #777;*/
