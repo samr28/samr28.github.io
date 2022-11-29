@@ -146,7 +146,7 @@
             <div class="banner-text">
                 <h1 class="responsive-headline">I'm Sam.</h1>
                 <h2>
-                    <a style="cursor: default;" href="" class="typewrite aNoLink" data-period="2000" data-type='[ "I Love Creating New Things.", "I Love Problem Solving.", "I Love Designing Things.", "I Love Tinkering.", "I Love Fixing Things.", "I Love Programming.", "I Love Building Robots." ]'>
+                    <a style="cursor: default;" href="" class="typewrite aNoLink" data-period="2000" data-type='[ "I Love Creating New Things.", "I Love Problem Solving.", "I Love Designing Things.", "I Love Tinkering.", "I Love Fixing Things.", "I Love Programming." ]'>
                         <span class="wrap"></span>
                     </a>
                 </h2>
@@ -194,7 +194,7 @@
                     </div>
                     <div class="columns download">
                         <p>
-                            <a href="resume4.0.1.pdf" class="button" download>
+                            <a href="resume4.0.5.pdf" class="button" download>
                                 <i class="fa fa-download"></i>Download Resume
                             </a>
                         </p>
@@ -237,10 +237,11 @@
                         <p class="info">Software Engineer I, Site Reliability Engineer <span>&bull;</span> <em class="date">July 2022 - Nov 2022 (layoff)</em></p>
                         <p>
                             <ul>
-                                <li><span>&bull;</span> Built a service to rotate on-call engineers in Slack</li>
-                                <li><span>&bull;</span> Wrote tech spec for modifications to our SLO dashboard</li>
-                                <li><span>&bull;</span> Built tools to assist in Reliability Engagements such as alert cataloging</li>
-                                <li><span>&bull;</span> Setup CI pipelines for multiple team projects to increase code quality and reduce bugs</li>
+                                <li><span>&bull;</span> Replaced a high-toil system with a system that includes tests, CI pipeline, better monitoring (statsd, Graphite, Grafana), alerting, and documentation. Reduced production errors in this service by 26%</li>
+                                <li><span>&bull;</span> Investigated multiple infrastructure models, collected feedback from team to choose the best solution</li>
+                                <li><span>&bull;</span> Upgraded tool built by a Tech Lead to be production ready (tests, CI, secrets in AWS for scalability)</li>
+                                <li><span>&bull;</span> Joined another team's on-call rotation to support while staffing issues were present, tuned alerts to reduce load</li>
+                                <li><span>&bull;</span> Tuned alerts and monitoring to identify availability issues with a third party metrics tool</li>
                                 <li><span>&bull;</span> Affected as part of November 2022 layoff</li>
                             </ul>
                         </p>
@@ -271,12 +272,11 @@
                         <p class="info">Teaching Assistant <span>&bull;</span> <em class="date">Fall 2019, Spring 2020</em></p>
                         <p>
                             <ul>
-                                <li><span>&bull;</span> Restructured team leadership, adding two lead positions which resulted in less errors in projects and homework assignments</li>
-                                <li><span>&bull;</span> Responsible for hiring and supervising 18 undergraduate Teaching Assistants</li>
-                                <li><span>&bull;</span> Led teams to build new automatic grading tools for all projects and homework assignments, giving students better feedback in less time</li>
-                                <li><span>&bull;</span> Held weekly team meetings to delegate tasks</li>
-                                <li><span>&bull;</span> Conducted individual TA meetings to assist with personal growth and provide feedback</li>
-                                <li><span>&bull;</span> Designed new projects to teach processor design, low level architecture, and networking</li>
+                                <li><span>&bull;</span> Built automated grading tools in Python which modify & run student code and then examine the internal processor state to ensure correct execution occurred. Provided students instant, valuable feedback and saved grading time</li>
+                                <li><span>&bull;</span> Designed new projects to teach students about system architecture and networking concepts (C, assembly)</li>
+                                <li><span>&bull;</span> Restructured team leadership, adding two lead positions, resulting in fewer errors in projects and homeworks</li>
+                                <li><span>&bull;</span> Hired new teaching assistants each semester and managed 18 through the semester</li>
+                                <li><span>&bull;</span> Conducted individual meetings with each TA to assist with personal growth and provide feedback</li>         
                             </ul>
                         </p>
                     </div>
@@ -301,12 +301,6 @@
                 </div>
                 <div class="row item">
                     <div class="twelve columns">
-                        <h3>Redfin</h3>
-                        <p class="info">Software Developer Intern - Rescinded due to COVID-19<span>&bull;</span> <em class="date">Summer 2020</em></p>
-                    </div>
-                </div>
-                <div class="row item">
-                    <div class="twelve columns">
                         <h3>eCIO</h3>
                         <p class="info">Software Developer Intern<span>&bull;</span> <em class="date">Summer 2019 & 2020</em></p>
                         <p>
@@ -320,18 +314,6 @@
                         </p>
                     </div>
                 </div>
-                <!-- <div class="row item">
-                    <div class="twelve columns">
-                        <h3>AkitaBox</h3>
-                        <p class="info">Software Developer Intern <span>&bull;</span> <em class="date">Summer 2017 & 2018</em></p>
-                        <p>
-                            <ul>
-                                <li><span>&bull;</span> Reduced bug fix turnaround time by adding server crash and error reporting to a Slack bot using AWS CodeDeploy SDK</li>
-                                <li><span>&bull;</span> Improved consumer value by adding a new building statistics page that summarizes analytics to improve efficiency</li>
-                            </ul>
-                        </p>
-                    </div>
-                </div> -->
             </div> <!-- main-col end -->
         </div> <!-- End Work -->
 
@@ -342,34 +324,36 @@
                 <h1><span>Skills</span></h1>
             </div>
             <div class="nine columns main-col">
-                <h4 class="skills-item">Languages:
+                <h4 class="skills-item">
                     <span class="badge"><i class="devicon-java-plain colored"></i> Java</span>
                     <span class="badge"><i class="devicon-c-plain colored"></i> C</span>
                     <span class="badge"><i class="devicon-python-plain colored"></i> Python</span>
+                    <span class="badge"><i class="devicon-bash-plain"></i> Bash/zsh</span>
                     <span class="badge"><i class="devicon-javascript-plain colored"></i> Javascript</span>
-                    <span class="badge"><i class="devicon-html5-plain colored"></i> HTML</span>
-                    <span class="badge"><i class="devicon-php-plain colored"></i> PHP</span>
-                </h4>
-                <h4 class="skills-item">Web: 
                     <span class="badge"><i class="devicon-nodejs-plain colored"></i> NodeJS</span>
-                    <span class="badge"><i class="devicon-react-original colored"></i> React</span>
-                    <span class="badge"><i class="devicon-nginx-original colored"></i> NGINX</span>
-                    <span class="badge"><i class="devicon-amazonwebservices-plain colored"></i> AWS Appsync</span>
-                    <span class="badge"><i class="devicon-firebase-plain colored"></i> Firebase</span>
+                    <span class="badge"><i class="devicon-html5-plain colored"></i> HTML</span>
+                    <span class="badge"><i class="devicon-css3-plain colored"></i> CSS</span>
+                    <span class="badge"><i class="devicon-php-plain colored"></i> PHP</span>
+                    <span class="badge"><i class="devicon-react-plain colored"></i> React</span>
+                    <span class="badge"><i class="devicon-angularjs-plain colored"></i> Angular</span>
                 </h4>
-                <h4 class="skills-item">Databases & APIs: 
-                    <span class="badge"><i class="devicon-graphql-plain colored"></i> GraphQL</span>
-                    <span class="badge"><i class="devicon-amazonwebservices-plain colored"></i> DynamoDB</span>
+                <h4 class="skills-item"> 
                     <span class="badge"><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
                     <span class="badge"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+                    <span class="badge"><i class="devicon-graphql-plain colored"></i> GraphQL</span>
                     <span class="badge"><i class="devicon-redis-plain colored"></i> Redis</span>
+                    <span class="badge"><i class="devicon-nginx-original colored"></i> NGINX</span>
+                    <span class="badge"><i class="devicon-apache-plain colored"></i> Apache</span>
+                    <span class="badge"><i class="devicon-amazonwebservices-plain colored"></i> AWS Appsync</span>
+                    <span class="badge"><i class="devicon-amazonwebservices-plain colored"></i> AWS DynamoDB</span>
                 </h4>
-                <h4>Platforms & Networking:
+                <h4 class="skills-item">
                     <span class="badge"><i class="devicon-ubuntu-plain colored"></i> Ubuntu</span>
                     <span class="badge"><i class="devicon-debian-plain colored"></i> Debian</span>
+                    <span class="badge"><i class="devicon-terraform-plain colored"></i> Terraform</span>
+                    <span class="badge"><i class="devicon-jenkins-line"></i> Jenkins</span>
                     <span class="badge"><i class="devicon-docker-plain colored"></i> Docker</span>
-                    <span class="badge"><i class="devicon-git-plain colored"></i> Git</span>
-                    <span class="badge">DNS & SSL</span>
+                    <span class="badge"><i class="devicon-kubernetes-plain colored"></i> Kubernetes</span>
                 </h4>
             </div>
         </div>
