@@ -137,7 +137,6 @@
                 <li><a class="smoothscroll" href="#about">About</a></li>
                 <li><a class="smoothscroll" href="#resume">Resume</a></li>
                 <li><a class="smoothscroll" href="#portfolio">Portfolio</a></li>
-                <!-- <li><a class="smoothscroll" href="#contact">Contact</a></li> -->
             </ul> <!-- end #nav -->
 
         </nav> <!-- end #nav-wrap -->
@@ -182,7 +181,10 @@
                     I studied Computer Science at the Georgia Institute of Technology and graduated in the Spring of 2022.
                     While there, I was a teaching assistant for the Systems and Networks course for two semesters and the head teaching assistant for three semesters.
                     In my final semester, I worked in the Space System Design lab to build infrastructure that connected our multiple ground stations and allowed for remote access.
-                    In my free time, I enjoy electric skateboarding, bonsai, and am a big sneakerhead! 
+                    In my free time, I enjoy hiking, electric skateboarding, bonsai, and am a big sneakerhead! 
+                </p>
+                <p>
+                    <i class="fa fa-map-marker"></i> Currently located in Seattle, WA
                 </p>
                 <div class="row">
                     <div class="columns contact-details">
@@ -199,10 +201,10 @@
                             </a>
                         </p>
                     </div>
-                </div> <!-- end row -->
-            </div> <!-- end .main-col -->
+                </div>
+            </div>
         </div>
-    </section> <!-- About Section End-->
+    </section>
 
 
     <!-- Resume Section -->
@@ -218,11 +220,13 @@
                         <h3>Georgia Institute of Technology</h3>
                         <p class="info">Student <span>&bull;</span> <em class="date">2018-2022</em></p>
                         <p>
-                            Bachelors of Science in Computer Science (threads: devices & intelligence).
+                            Bachelors of Science in Computer Science (threads: devices & intelligence)
+                            <br>
+                            <em>Honors: summa cum laude</em>
                         </p>
                     </div>
-                </div> <!-- item end -->
-            </div> <!-- main-col end -->
+                </div>
+            </div>
         </div> <!-- End Education -->
 
         <!-- Work -->
@@ -333,9 +337,8 @@
                     <span class="badge"><i class="devicon-nodejs-plain colored"></i> NodeJS</span>
                     <span class="badge"><i class="devicon-html5-plain colored"></i> HTML</span>
                     <span class="badge"><i class="devicon-css3-plain colored"></i> CSS</span>
-                    <span class="badge"><i class="devicon-php-plain colored"></i> PHP</span>
                     <span class="badge"><i class="devicon-react-plain colored"></i> React</span>
-                    <span class="badge"><i class="devicon-angularjs-plain colored"></i> Angular</span>
+                    <span class="badge"><i class="devicon-php-plain colored"></i> PHP</span>
                 </h4>
                 <h4 class="skills-item"> 
                     <span class="badge"><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
@@ -396,6 +399,22 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-sm-6 col-md-3 col-lg-3 hardware">
+                            <div class="columns portfolio-item">
+                                <div class="item-wrap">
+                                    <a href="#modal-rackserver" title="">
+                                        <img alt="" src="images/portfolio/255x255/rackserver.jpg">
+                                        <div class="overlay">
+                                            <div class="portfolio-item-meta">
+                                                <h5>25U Rack Server</h5>
+                                                <p>Hardware</p>
+                                            </div>
+                                        </div>
+                                        <div class="link-icon"><i class="icon-plus"></i></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-sm-6 col-md-3 col-lg-3 web">
                             <div class="columns portfolio-item">
                                 <div class="item-wrap">
@@ -437,22 +456,6 @@
                                             <div class="portfolio-item-meta">
                                                 <h5>eL</h5>
                                                 <p>Hardware, Hackathon</p>
-                                            </div>
-                                        </div>
-                                        <div class="link-icon"><i class="icon-plus"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3 col-lg-3 web hackathon">
-                            <div class="columns portfolio-item">
-                                <div class="item-wrap">
-                                    <a href="#modal-animaid" title="">
-                                        <img alt="" src="images/portfolio/255x255/animaid1.jpg">
-                                        <div class="overlay">
-                                            <div class="portfolio-item-meta">
-                                                <h5>AnimAid</h5>
-                                                <p>Hackathon</p>
                                             </div>
                                         </div>
                                         <div class="link-icon"><i class="icon-plus"></i></div>
@@ -530,6 +533,25 @@
                     <a class="popup-modal-dismiss">Close</a>
                 </div>
             </div>
+            <div id="modal-rackserver" class="popup-modal mfp-hide">
+                <img class="scale-with-grid" src="images/portfolio/rackserver.jpg" alt="" />
+                <div class="description-box">
+                    <h4>25U Rack Server</h4>
+                    <p>
+                        In 2013, I bought a Dell Poweredge 2800 for $25. I used it to learn about Linux and host simple HTML pages
+                        using Apache. I slowly upgraded components and eventually built a more modern machine which I still use to this day
+                        for hosting personal projects and sites like this one! 
+                        <br><br>
+                        I now have all of my sites running in containers in a micro-service
+                        architecture using Docker. Hardware-wise, I have upgraded to a 25U rack with multiple multiple machines, network switches,
+                        and routers.
+                    </p>
+                    <span class="categories"><i class="fa fa-tag"></i>Hardware</span>
+                </div>
+                <div class="link-box">
+                    <a class="popup-modal-dismiss">Close</a>
+                </div>
+            </div>
             <div id="modal-esk8" class="popup-modal mfp-hide">
                 <img class="scale-with-grid" src="images/portfolio/esk8.png" alt="" />
                 <div class="description-box">
@@ -580,22 +602,6 @@
                     <a class="popup-modal-dismiss">Close</a>
                 </div>
             </div>
-            <div id="modal-animaid" class="popup-modal mfp-hide">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/2-PuKfeCO_s" frameborder="0"
-                allowfullscreen></iframe>
-                <div class="description-box">
-                    <h4>AnimAid</h4>
-                    <p>At MIT's Reality Virtually hackathon, I worked with a ream to build an augmented reality app 
-                        in Unity that allows creators to make storyboards much quicker. We also implemented a neural network 
-                        to take in 2D sketches from multiple angles and convert them into 3D models by inferring missing details.
-                    </p>
-                    <span class="categories"><i class="fa fa-tag"></i>Hackathon</span>
-                </div>
-                <div class="link-box">
-                    <a href="https://devpost.com/software/animaid" target="_blank">Devpost</a>
-                    <a class="popup-modal-dismiss">Close</a>
-                </div>
-            </div>
             <div id="modal-rocket" class="popup-modal mfp-hide">
                 <div class="description-box">
                     <video width="100%" controls>
@@ -619,7 +625,7 @@
                 <div class="description-box">
                     <h4>SBC Cluster Cases</h4>
                     <p>I've designed a few 3D printable cluster cases for single board computers. Combined, they have 
-                        over 4,500 views and 1,000 downloads. The cases allow the user to stack as many boards as they want without needing 
+                        over 4,500 views and 1,500 downloads. The cases allow the user to stack as many boards as they want without needing 
                         to print many diferent parts.
                     </p>
                     <span class="categories"><i class="fa fa-tag"></i>Hardware</span>
@@ -695,8 +701,13 @@
                                 onmouseout="this.src='images/devpost-dark.png';" onmouseover="this.src='images/devpost-hover.png';"></a></li>
                 </ul>
                 <ul class="copyright">
-                    <li>&copy; Copyright 2022 Sam Roquitte</li>
+                    <li>&copy; Copyright 2023 Sam Roquitte</li>
                     <li>Design by Styleshout & Sam Roquitte</li>
+                    <li>
+                        <a href="https://unsplash.com/photos/skUTVJi8-jc" target="_blank">
+                            Cover photo from Thom Milkovic
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
