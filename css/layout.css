@@ -36,7 +36,7 @@ header {
    height: 800px;
    min-height: 500px;
    width: 100%;
-   background: #161415 url(../images/tech.jpg) no-repeat top center;
+   background: #161415 url(../images/seattle.jpg) no-repeat top center;
    background-size: cover !important;
 	-webkit-background-size: cover !important;
    text-align: center;
@@ -206,7 +206,7 @@ ul#nav li.current a { color: #11ABB0; }
 }
 #about p {
    line-height: 30px;
-   color: #7A7A7A;
+   color: #a5a5a5;
 }
 #about .profile-pic {
    position: relative;
