@@ -145,7 +145,17 @@
             <div class="banner-text">
                 <h1 class="responsive-headline">I'm Sam.</h1>
                 <h2>
-                    <a style="cursor: default;" href="" class="typewrite aNoLink" data-period="2000" data-type='[ "I Love Creating New Things.", "I Love Problem Solving.", "I Love Designing Things.", "I Love Tinkering.", "I Love Fixing Things.", "I Love Programming." ]'>
+                    <a 
+                        style="cursor: default;" 
+                        href="" class="typewrite aNoLink" 
+                        data-period="2000" 
+                        data-type='[ 
+                            "I Love Building New Things.", 
+                            "I Love Problem Solving.", 
+                            "I Love Designing Things.", 
+                            "I Love Tinkering.", 
+                            "I Love Fixing Things." ]'
+                    >
                         <span class="wrap"></span>
                     </a>
                 </h2>
@@ -178,19 +188,18 @@
             <div class="nine columns main-col">
                 <h2>About Me</h2>
                 <p>
-                    I studied Computer Science at the Georgia Institute of Technology and graduated in the Spring of 2022.
+                    I grew up in Madison Wisconsin and was the co-president of the high school robotics team as well as the lead payload engineer for the rocketry club.
+                    After high school, I studied Computer Science at the Georgia Institute of Technology and graduated in the Spring of 2022.
                     While there, I was a teaching assistant for the Systems and Networks course for two semesters and the head teaching assistant for three semesters.
-                    In my final semester, I worked in the Space System Design lab to build infrastructure that connected our multiple ground stations and allowed for remote access.
-                    In my free time, I enjoy hiking, electric skateboarding, bonsai, and am a big sneakerhead! 
-                </p>
-                <p>
-                    <i class="fa fa-map-marker"></i> Currently located in Seattle, WA
+                    In my final semester, I worked in the Space System Design lab to build infrastructure that connected our ground stations and allowed for remote access from our Mission Operations Center.
+                    In my free time, I enjoy hiking, electric skateboarding, gardening, bonsai, hobbiest electronics, and am a big sneakerhead! 
                 </p>
                 <div class="row">
                     <div class="columns contact-details">
                         <h2>Contact Details</h2>
                         <p class="address">
                             <span>Sam Roquitte</span><br>
+                            <span><i class="fa fa-map-marker"></i> Seattle, WA</span><br>
                             <span><a href="mailto:sam@roquitte.com">sam@roquitte.com</a></span>
                         </p>
                     </div>
@@ -237,8 +246,14 @@
             <div class="nine columns main-col">
                 <div class="row item">
                     <div class="twelve columns">
+                        <h3>Blue Origin</h3>
+                        <p class="info">Software Engineer<span>&bull;</span> <em class="date">Feb 2023 - Present</em></p>
+                    </div>
+                </div>
+                <div class="row item">
+                    <div class="twelve columns">
                         <h3>Redfin</h3>
-                        <p class="info">Software Engineer I, Site Reliability Engineer <span>&bull;</span> <em class="date">July 2022 - Nov 2022 (layoff)</em></p>
+                        <p class="info">Software Engineer I, Site Reliability Engineering <span>&bull;</span> <em class="date">July 2022 - Nov 2022 (layoff)</em></p>
                         <p>
                             <ul>
                                 <li><span>&bull;</span> Replaced a high-toil system with a system that includes tests, CI pipeline, better monitoring (statsd, Graphite, Grafana), alerting, and documentation. Reduced production errors in this service by 26%</li>
@@ -270,11 +285,11 @@
                     </div>
                 </div>
                 <div class="row item">
-                    <div class="twelve columns">
+                    <div class="twelve columns has-readmore">
                         <h3>Georgia Tech CS2200 Systems and Networking</h3>
                         <p class="info">Head Teaching Assistant <span>&bull;</span> <em class="date">Fall 2020, Spring 2021, Fall 2021</em></p>
                         <p class="info">Teaching Assistant <span>&bull;</span> <em class="date">Fall 2019, Spring 2020</em></p>
-                        <p>
+                        <div class="readmore">
                             <ul>
                                 <li><span>&bull;</span> Built automated grading tools in Python which modify & run student code and then examine the internal processor state to ensure correct execution occurred. Provided students instant, valuable feedback and saved grading time</li>
                                 <li><span>&bull;</span> Designed new projects to teach students about system architecture and networking concepts (C, assembly)</li>
@@ -282,14 +297,15 @@
                                 <li><span>&bull;</span> Hired new teaching assistants each semester and managed 18 through the semester</li>
                                 <li><span>&bull;</span> Conducted individual meetings with each TA to assist with personal growth and provide feedback</li>         
                             </ul>
-                        </p>
+                        </div>
+                        <span class="readmore-link"></span>
                     </div>
                 </div>
                 <div class="row item">
-                    <div class="twelve columns">
+                    <div class="twelve columns has-readmore">
                         <h3>Redfin</h3>
                         <p class="info">Software Developer Intern<span>&bull;</span> <em class="date">Summer 2021</em></p>
-                        <p>
+                        <div class="readmore">
                             <ul>
                                 <li><span>&bull;</span> Built a new live status monitoring service to track third party outages and 
                                     performance issues and display them for the mortgage operations teams</li>
@@ -300,14 +316,15 @@
                                         <li><span>&bull;</span> Lays the groundwork for future projects that will be using these technologies</li>
                                     </ul>
                             </ul>
-                        </p>
+                        </div>
+                        <span class="readmore-link"></span>
                     </div>
                 </div>
                 <div class="row item">
-                    <div class="twelve columns">
+                    <div class="twelve columns has-readmore">
                         <h3>eCIO</h3>
                         <p class="info">Software Developer Intern<span>&bull;</span> <em class="date">Summer 2019 & 2020</em></p>
-                        <p>
+                        <div class="readmore">
                             <ul>
                                 <li><span>&bull;</span> One of two developers charged with building a client facing investment portfolio management system (<a href="https://myecio.com/login" target="_blank">myecio.com</a>)</li>
                                 <li><span>&bull;</span> Reduced average app load time from 760ms to 106ms by implementing a proxy endpoint in the backend service</li>
@@ -315,7 +332,8 @@
                                 <li><span>&bull;</span> Built an iCAL service to allow users to load events from eCIO into their own calendar</li>
                                 <li><span>&bull;</span> Designed a backend service to store client information, members, financial records, and sensitive organization documents</li>
                             </ul>
-                        </p>
+                        </div>
+                        <span class="readmore-link"></span>
                     </div>
                 </div>
             </div> <!-- main-col end -->
@@ -727,6 +745,7 @@
     <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/jquery.isotope.js"></script>
+    <script type="text/javascript" src="js/readmore.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 
 </body>
