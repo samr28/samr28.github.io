@@ -247,25 +247,24 @@
                 <div class="row item">
                     <div class="twelve columns">
                         <h3>Blue Origin</h3>
-                        <p class="info">Blue Ring Flight Software Engineer II<span>&bull;</span> <em class="date">May 2025 - Present</em></p>
+                        <p class="info">Flight Software Engineer II, Blue Ring<span>&bull;</span> <em class="date">May 2025 - Present</em></p>
                             <ul>
-                                <li><span>&bull;</span> Responsible engineer for thermal subsystem software - setup commanding framework and implemented all commands to control 80+ thermal zones on vehicle with closed loop control</li>
-                                <li><span>&bull;</span> Programatically aligned 17,000 command/telemetry mnemonics between list from systems and flight software</li>
+                                <li><span>&bull;</span> Developed a full-featured SDK delivered to external commercial payload customers enabling vehicle simulation, live telemetry, commanding, scripting, and file transfer interfaces</li>
+                                <li><span>&bull;</span> Self-initiated and led all end-to-end hardware validation of payload accessory, testing GPIO, analog, and power channels against live hardware with no prior precedent on the team</li>
+                                <li><span>&bull;</span> Discovered and coordinated fixes across software, FPGA, and hardware teams for multiple critical issues found</li>
+                                <li><span>&bull;</span> Identified a flight binary defect that would have bricked boards from the factory and required reopening enclosures to re-stake SSDs. 48+ hour delay for two customers manifested on the first flight of Blue Ring; fix prevented the delay</li>
+                                <li><span>&bull;</span> Responsible engineer for thermal subsystem software; implemented closed-loop control framework across 80+ thermal zones</li>
+                                <li><span>&bull;</span> Programmatically aligned 17,000 command/telemetry mnemonics between list from systems and flight software</li>
                                 <li><span>&bull;</span> Implemented 15 commands for low voltage distribution control, found issue in HIL with commands being dropped</li>
-                                <li><span>&bull;</span> Built web interface for a SDK allowing customer to directly command, receive live telemetry, write test scripts</li>
-                                <li><span>&bull;</span> Refactored software app stubs to allow them to be published to Artifactory and used for testing by external teams</li>
                             </ul>
-                        <p class="info">New Glenn Software Engineer II, Embedded Software<span>&bull;</span> <em class="date">Aug 2024 - May 2025</em></p>
-                        <p class="info">New Glenn Software Engineer I, Embedded Software<span>&bull;</span> <em class="date">Feb 2023 - Aug 2024</em></p>
+                        <p class="info">Software Development Engineer II, New Glenn Embedded Software<span>&bull;</span> <em class="date">Aug 2024 - May 2025</em></p>
+                        <p class="info">Software Development Engineer I, New Glenn Embedded Software<span>&bull;</span> <em class="date">Feb 2023 - Aug 2024</em></p>
                         <p>
                             <ul>
                                 <li><span>&bull;</span> Led HLSR verification effort for the Main Flight Computer to support the first flight of New Glenn</li>
-                                <li><span>&bull;</span> Refactored Blue Ring software app stubs to allow them to be published and used for testing by external teams</li>
                                 <li><span>&bull;</span> Led system-level implementation of loss of communication function to enable integrated tanking tests</li>
                                 <li><span>&bull;</span> Took ownership of integrating a new hardware component including writing C++ IO device drivers</li>
                                 <li><span>&bull;</span> Prototyped CBIT implementations to continuously verify that devices are working properly, wrote unit tests for PIL</li>
-                                <li><span>&bull;</span> Fixed CMake files to solve linker errors on a new project allowing team to build binaries to test with</li>
-                                <li><span>&bull;</span> Tested key embedded controller functionality in HIL lab to verify requirements are being met</li>
                             </ul>
                         </p>
                     </div>
@@ -373,6 +372,9 @@
                     <span class="badge"><i class="devicon-python-plain colored"></i> Python</span>
                     <span class="badge"><i class="devicon-bash-plain"></i> Bash/zsh</span>
                     <span class="badge"><i class="devicon-cmake-plain colored"></i> CMake</span>
+                    <span class="badge">Jinja2</span>
+                    <span class="badge">ZMQ</span>
+                    <span class="badge">rti DDS</span>
                 </h4>
                 <h4 class="skills-item">
                     <span class="badge"><i class="devicon-javascript-plain colored"></i> Javascript</span>
@@ -388,8 +390,6 @@
                     <span class="badge"><i class="devicon-redis-plain colored"></i> Redis</span>
                     <span class="badge"><i class="devicon-nginx-original colored"></i> NGINX</span>
                     <span class="badge"><i class="devicon-apache-plain colored"></i> Apache</span>
-                    <span class="badge"><i class="devicon-amazonwebservices-plain colored"></i> AWS Appsync</span>
-                    <span class="badge"><i class="devicon-amazonwebservices-plain colored"></i> AWS DynamoDB</span>
                 </h4>
                 <h4 class="skills-item">
                     <span class="badge"><i class="devicon-ubuntu-plain colored"></i> Ubuntu</span>
@@ -399,6 +399,12 @@
                     <span class="badge"><i class="devicon-jenkins-line"></i> Jenkins</span>
                     <span class="badge"><i class="devicon-docker-plain colored"></i> Docker</span>
                     <span class="badge"><i class="devicon-kubernetes-plain colored"></i> Kubernetes</span>
+                    <span class="badge"><i class="devicon-ansible-plain colored"></i> Ansible</span>
+                </h4>
+                <h4 class="skills-item">
+                    <span class="badge">Claude Code</span>
+                    <span class="badge">AI Assisted Development</span>
+                    <span class="badge">Prompt Engineering</span>
                 </h4>
             </div>
         </div>
@@ -425,6 +431,22 @@
                 </div>
                 <div class="row">
                     <div class="portfolio-items">
+                        <div class="col-sm-6 col-md-3 col-lg-3 web">
+                            <div class="columns portfolio-item">
+                                <div class="item-wrap">
+                                    <a href="#modal-runway" title="">
+                                        <img alt="" src="images/portfolio/255x255/runway.png">
+                                        <div class="overlay">
+                                            <div class="portfolio-item-meta">
+                                                <h5>Runway</h5>
+                                                <p>iOS App</p>
+                                            </div>
+                                        </div>
+                                        <div class="link-icon"><i class="icon-plus"></i></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-sm-6 col-md-3 col-lg-3 web hackathon">
                             <div class="columns portfolio-item">
                                 <div class="item-wrap">
@@ -537,26 +559,27 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-3 col-lg-3 web">
-                            <div class="columns portfolio-item">
-                                <div class="item-wrap">
-                                    <a href="#modal-pingserverdowndetector" title="">
-                                        <img alt="" src="images/portfolio/255x255/pingserverdowndetector1.jpg">
-                                        <div class="overlay">
-                                            <div class="portfolio-item-meta">
-                                                <h5>Ping Server Down Detector</h5>
-                                            </div>
-                                        </div>
-                                        <div class="link-icon"><i class="icon-plus"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Modal Popup -->
+            <div id="modal-runway" class="popup-modal mfp-hide">
+                <img class="scale-with-grid" src="images/portfolio/runway.png" alt="" />
+                <div class="description-box">
+                    <h4>Runway</h4>
+                    <p>
+                        Built and shipped a production iOS app without prior Swift experience using Claude Code and AI-assisted development.
+                        Runway provides pilots and travelers with real-time METAR/TAF weather and airport lounge information for any airport,
+                        aggregating lounge data across major loyalty programs. The backend server and web scrapers are self-hosted on my home lab.
+                    </p>
+                    <span class="categories"><i class="fa fa-tag"></i>iOS, Web Development</span>
+                </div>
+                <div class="link-box">
+                    <a href="https://runway.samr.dev" target="_blank">runway.samr.dev</a>
+                    <a class="popup-modal-dismiss">Close</a>
+                </div>
+            </div>
             <div id="modal-buzzbasket" class="popup-modal mfp-hide">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZG4nnhYGyF4" frameborder="0"
                 allowfullscreen></iframe>
@@ -674,21 +697,6 @@
                 </div>
                 <div class="link-box">
                     <a href="https://www.thingiverse.com/kir13y/designs" target="_blank">View On Thingiverse</a>
-                    <a class="popup-modal-dismiss">Close</a>
-                </div>
-            </div>
-            <div id="modal-pingserverdowndetector" class="popup-modal mfp-hide">
-                <img class="scale-with-grid" src="images/portfolio/pingserverdowndetector2.png" alt="" />
-                <div class="description-box">
-                    <h4>Ping Server Down Detector</h4>
-                    <p>I wrote a Node.js application that pings servers and will notify the user if any of them are
-                        down.
-                        It has since been expanded to include a live server status page which shows vitals for all of
-                        the servers (cpu temp, ram usage, etc.)</p>
-                    <span class="categories"><i class="fa fa-tag"></i>Web development</span>
-                </div>
-                <div class="link-box">
-                    <a href="https://github.com/samr28/ping-server-down-detector" target="_blank">View Code</a>
                     <a class="popup-modal-dismiss">Close</a>
                 </div>
             </div>
